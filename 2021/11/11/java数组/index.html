@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://example.com/2021/11/11/java%E6%95%B0%E7%BB%84/数组下标图解.png">
 <meta property="og:image" content="http://example.com/2021/11/11/java%E6%95%B0%E7%BB%84/arraycopy方法的源码.png">
 <meta property="article:published_time" content="2021-11-11T08:54:26.000Z">
-<meta property="article:modified_time" content="2021-11-11T15:18:33.969Z">
+<meta property="article:modified_time" content="2021-11-11T17:07:55.607Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2021/11/11/java%E6%95%B0%E7%BB%84/数组下标图解.png">
@@ -157,25 +157,47 @@
 <h1 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h1><ul>
 <li><p>一维数组的创建：</p>
 <ul>
-<li>第一种创建方式：<code>数组数据类型[] 数组名 = &#123;数组元素1, 数组元素2, 数组元素3, ...&#125;;</code><br>例如：<code>int[] nums = &#123;1, 2, 3, 4, 5&#125;;</code><br>这里创建了一个含有元素1，2，3，4，5的一维整型数组。每个元素都可以通过数组名和元素下标的方式来获取。（下面会有相关内容的讲解） </li>
-<li>第二种创建方式： <code>数组数据类型[] 数组名 = new 数组数据类型[数组元素个数]; </code><br>例如：<code>int[] nums2 = new int[5];</code><br>此时，这里创建了一个包含5个元素的整型数组。<br>注意：使用这种方式创建数组的时候，每个数组元素的值都是默认的值，如int类型的默认值是0，所以该数组中的每个原素都是0，即数组中存储了5个0，之后我们需要重新对数组的元素进行赋值操作才能存储我们想要的数据。</li>
+<li>第一种创建方式：<blockquote>
+<p>代码示例 ：<code>数组数据类型[] 数组名 = &#123;数组元素1, 数组元素2, 数组元素3, ...&#125;;</code><br>例如：<code>int[] nums = &#123;1, 2, 3, 4, 5&#125;;</code><br>这里创建了一个含有元素1，2，3，4，5的一维整型数组。每个元素都可以通过数组名和元素下标的方式来获取。（下面会有相关内容的讲解） </p>
+</blockquote>
+</li>
+<li>第二种创建方式： <blockquote>
+<p>代码示例：<code>数组数据类型[] 数组名 = new 数组数据类型[数组元素个数]; </code><br>例如：<code>int[] nums2 = new int[5];</code><br>此时，这里创建了一个包含5个元素的整型数组。<br>注意：使用这种方式创建数组的时候，每个数组元素的值都是默认的值，如int类型的默认值是0，所以该数组中的每个原素都是0，即数组中存储了5个0，之后我们需要重新对数组的元素进行赋值操作才能存储我们想要的数据。</p>
+</blockquote>
+</li>
 </ul>
 </li>
-<li><p>数组的下标：<br>了解完一维数组的创建之后，接下来我们来了解一些和数组有关的小内容，如数组的下标。<br>数组的下标是对数组元素的一个排序，就像是现实中的排队一样，数组的每一个元素都有自己的一个编号，从左到右依次为：0, 1, 2, 3, 4, 5, …<br>如对于<code>int[] nums = &#123;1, 2, 3, 4, 5&#125;;</code>而言，nums数组中有五个元素，其元素与下标的对应关系如下：  </p>
+<li><p>数组的下标：</p>
+<blockquote>
+<p>了解完一维数组的创建之后，接下来我们来了解一些和数组有关的小内容，如数组的下标。<br>数组的下标是对数组元素的一个排序，就像是现实中的排队一样，数组的每一个元素都有自己的一个编号，从左到右依次为：0, 1, 2, 3, 4, 5, …<br>例如<code>int[] nums = &#123;1, 2, 3, 4, 5&#125;;</code>，对于nums数组而言，数组中有五个元素，其元素与下标的对应关系如下：  </p>
+</blockquote>
 <div align="center">
   <img src="/2021/11/11/java%E6%95%B0%E7%BB%84/数组下标图解.png
   ">
 </div>
 现在下标和元素的关系我们已经知道了，那么我们就可以对数组的元素进行我们想要的操作了。</li>
-<li><p>获取一维数组元素的值：<br>相关代码：<code>数组名[元素下标]</code><br>例子（这里顺便将得到的值进行打印输出）：<br><code>int[] nums = &#123;1, 2, 3, 4, 5&#125;;</code><br><code>for(int i = 0; i &lt; 5; i++)&#123;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>System.out.print(nums[i] + &quot; &quot;);</code><br><code>&#125;</code><br>输出结果：1 2 3 4 5 </p>
+<li><p>获取一维数组元素的值：  </p>
+<blockquote>
+<p>代码示例：<code>数组名[元素下标]</code><br>例子（这里顺便将得到的值进行打印输出）：<br><code>int[] nums = &#123;1, 2, 3, 4, 5&#125;;</code><br><code>for(int i = 0; i &lt; 5; i++)&#123;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>System.out.print(nums[i] + &quot; &quot;);</code><br><code>&#125;</code><br>输出结果：1 2 3 4 5 </p>
+</blockquote>
 </li>
-<li><p>修改一维数组中元素的值：<br>代码为：<code>数组名[元素下标] = 修改后元素的值;</code><br>例子（这里只给出main方法中的代码）：<br><code>int[] nums = &#123;1, 2, 3, 4, 5&#125;;</code><br><code>System.out.println(nums[2]);     //这里取出了nums数组中下标为2的元素，即整型3</code><br>输出结果：3<br>PS:用这个代码就可以修改上面‘数组的创建’中，第二种方法创建的一维数组元素的值。</p>
+<li><p>修改一维数组中元素的值：  </p>
+<blockquote>
+<p>代码示例：<code>数组名[元素下标] = 修改后元素的值;</code><br>例子（这里只给出main方法中的代码）：<br><code>int[] nums = &#123;1, 2, 3, 4, 5&#125;;</code><br><code>System.out.println(nums[2]);     //这里取出了nums数组中下标为2的元素，即整型3</code><br>输出结果：3<br>PS:用这个代码就可以修改上面‘数组的创建’中，第二种方法创建的一维数组元素的值。</p>
+</blockquote>
 </li>
-<li><p>一维数组的拷贝：<br>数组的拷贝需要使用System类中的arraycopy方法：<br>使用示例（只放出main方法中的代码）：<br><code>int[] src = &#123;1, 2, 3, 4, 5&#125;;</code><br><code>int[] dest = new int[20];</code><br><code>System.arraycopy(src, 0, dest, 3, 4);</code><br><code>for(int i = 0; i &lt; dest.length; i++)</code><br><code>&#123;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>System.out.print(dest[i] + &quot; &quot;);</code><br><code>&#125;</code><br>输出结果为： 0 0 0 1 2 3 4 0 0 0<br>arraycopy方法的源码：  </p>
+<li><p>一维数组的拷贝：    </p>
+<blockquote>
+<p>数组的拷贝需要使用System类中的arraycopy方法：<br>例子（只放出main方法中的代码）：<br><code>int[] src = &#123;1, 2, 3, 4, 5&#125;;</code><br><code>int[] dest = new int[20];</code><br><code>System.arraycopy(src, 0, dest, 3, 4);</code><br><code>for(int i = 0; i &lt; dest.length; i++)</code><br><code>&#123;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>System.out.print(dest[i] + &quot; &quot;);</code><br><code>&#125;</code><br>输出结果为： 0 0 0 1 2 3 4 0 0 0<br>arraycopy方法的源码：  </p>
+</blockquote>
 <div align="center">
   <img src="/2021/11/11/java%E6%95%B0%E7%BB%84/arraycopy方法的源码.png" width="70%">
 </div>
-从源码中可以看出，该方法有五个参数，从左到右分别是要复制的数组，复制起点的下标，要复制到的数组，复制到的位置的下标，以及复制的长度。</li>
+
+<blockquote>
+<p>从源码中可以看出，该方法有五个参数，从左到右分别是要复制的数组，复制起点的下标，要复制到的数组，复制到的位置的下标，以及复制的长度。</p>
+</blockquote>
+</li>
 </ul>
 
       
