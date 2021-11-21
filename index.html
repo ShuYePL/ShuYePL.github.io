@@ -148,26 +148,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="内容简介：记录下main方法中String-args这个参数的一些相关知识点。"><a href="#内容简介：记录下main方法中String-args这个参数的一些相关知识点。" class="headerlink" title="内容简介：记录下main方法中String[] args这个参数的一些相关知识点。"></a>内容简介：记录下main方法中String[] args这个参数的一些相关知识点。</h3><p>先前一段时间学了数组，老师也将String[] args的一些作用讲了一下，现在记录一下：String[] args和其他数组看上去一模一样，所以在看到这个的时候也可以判断它就是一个一维数组了（废话），这个一维数组可以存储我们在启动.class文件时输入的一些参数，它的操作方式和其他一维数组没什么区别。也就是我们可以使用一维数组遍历的方式对args数组进行遍历操作。就像下面这段代码一样（这段代码在后面会用到）。<br>例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array12</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; args.length; i++)&#123;</span><br><span class="line">            System.out.println(args[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="输入数据的方法"><a href="#输入数据的方法" class="headerlink" title="输入数据的方法"></a>输入数据的方法</h1><p>在命令行中，我们在启动.class文件的时候顺便把想要输入的参数写入到启动命令的后面并把相应的参数以空格隔开就可以完成。例如将上面的一段代码输入带文本文档中并保存，在命令行中运行（在命令行中输入一些数据的情况下），结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\jh\Desktop&gt;javac Array12.java</span><br><span class="line"></span><br><span class="line">C:\Users\jh\Desktop&gt;java Array12 a b c d</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
-
-<p>在IDEA中我们输入数据的方式要简单得多，具体的操作方式如下：在代码编辑区右键，选择Modify Run Configuration…</p>
-<div>
-    <img src="/2021/11/21/java-main%E6%96%B9%E6%B3%95%E4%B8%AD%E5%8F%82%E6%95%B0String-args%E7%9A%84%E7%94%A8%E6%B3%95/IDEA操作输入args参数的方法步骤1.png">
-</div>
-之后在Program arguments中输入想要输入的参数即可
-<div>
-    <img src="/2021/11/21/java-main%E6%96%B9%E6%B3%95%E4%B8%AD%E5%8F%82%E6%95%B0String-args%E7%9A%84%E7%94%A8%E6%B3%95/IDEA操作输入args参数的方法步骤2.png">
-</div>
-记得当输入多个参数的时候，参数与参数之间要用空格隔开
-<div>
-    <img src="/2021/11/21/java-main%E6%96%B9%E6%B3%95%E4%B8%AD%E5%8F%82%E6%95%B0String-args%E7%9A%84%E7%94%A8%E6%B3%95/IDEA操作输入args参数的方法步骤3.png">
-</div>
-
-<p>之后点击右下角的Apply和ok就可以了，运行结果如下：  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br><span class="line">e</span><br><span class="line">f</span><br><span class="line">g</span><br></pre></td></tr></table></figure>
+        <h3 id="内容简介：记录下main方法中String-args这个参数的一些相关知识点。"><a href="#内容简介：记录下main方法中String-args这个参数的一些相关知识点。" class="headerlink" title="内容简介：记录下main方法中String[] args这个参数的一些相关知识点。"></a>内容简介：记录下main方法中String[] args这个参数的一些相关知识点。</h3>
+        
+          <a class="article-more-a" href="/2021/11/21/java-main%E6%96%B9%E6%B3%95%E4%B8%AD%E5%8F%82%E6%95%B0String-args%E7%9A%84%E7%94%A8%E6%B3%95/#more">more >></a>
+        
       
 
       
