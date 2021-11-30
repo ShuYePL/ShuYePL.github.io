@@ -6,25 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>hexo搭建个人博客的一些疑问 | Hexo</title>
+  <title>Java查找算法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文章简介：本文章记录了使用hexo结合yilia主题搭建个人博客过程中遇到的一些问题和疑问，以及相关的解决方法。">
+  <meta name="description" content="文章简介：记录查找数组中相应元素的算法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo搭建个人博客的一些疑问">
-<meta property="og:url" content="http://example.com/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/index.html">
+<meta property="og:title" content="Java查找算法">
+<meta property="og:url" content="http://example.com/2021/11/25/Java%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="文章简介：本文章记录了使用hexo结合yilia主题搭建个人博客过程中遇到的一些问题和疑问，以及相关的解决方法。">
+<meta property="og:description" content="文章简介：记录查找数组中相应元素的算法。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/Markdown文件头部生成的文字.png">
-<meta property="og:image" content="http://example.com/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/tag乱写之后出现的错误.png">
-<meta property="og:image" content="http://example.com/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/tags的正确编写格式.png">
-<meta property="og:image" content="http://example.com/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/个人博客主页_标记所有文章.png">
-<meta property="og:image" content="http://example.com/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/所有文章_tag作用.png">
-<meta property="article:published_time" content="2021-10-30T13:29:07.000Z">
-<meta property="article:modified_time" content="2021-10-31T16:55:46.828Z">
+<meta property="article:published_time" content="2021-11-24T16:05:27.000Z">
+<meta property="article:modified_time" content="2021-11-26T12:49:46.296Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/Markdown文件头部生成的文字.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -136,20 +131,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo搭建个人博客的一些疑问" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java查找算法" class="article article-type-post " itemscope itemprop="blogPost">
 	<div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      hexo搭建个人博客的一些疑问
+      Java查找算法
     </h1>
   
 
         
-        <a href="/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/" class="archive-article-date">
-  	<time datetime="2021-10-30T13:29:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-30</time>
+        <a href="/2021/11/25/Java%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-11-24T16:05:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-25</time>
 </a>
 
         				
@@ -157,24 +152,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="文章简介：本文章记录了使用hexo结合yilia主题搭建个人博客过程中遇到的一些问题和疑问，以及相关的解决方法。"><a href="#文章简介：本文章记录了使用hexo结合yilia主题搭建个人博客过程中遇到的一些问题和疑问，以及相关的解决方法。" class="headerlink" title="文章简介：本文章记录了使用hexo结合yilia主题搭建个人博客过程中遇到的一些问题和疑问，以及相关的解决方法。"></a>文章简介：本文章记录了使用hexo结合yilia主题搭建个人博客过程中遇到的一些问题和疑问，以及相关的解决方法。</h4><span id="more"></span>
-
-<h1 id="Q1：Markdown文件中自动生成的文字中tags：的作用是什么？"><a href="#Q1：Markdown文件中自动生成的文字中tags：的作用是什么？" class="headerlink" title="Q1：Markdown文件中自动生成的文字中tags：的作用是什么？"></a>Q1：Markdown文件中自动生成的文字中tags：的作用是什么？</h1><p>在创建一篇文章（使用命令hexo n “文章名”）之后，打开该文章的Markdown文件，在文件的前面有如下的一段自动生成的文字：</p>
-<p><img src="/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/Markdown文件头部生成的文字.png" alt="Markdown文件头部生成的文字" height="100px"></p>
-<p>当我第一次在tags：之后填入内容时(胡乱填入的，像是：51单片机，51，单片机)，在使用相关的hexo命令时出现了相关的错误提示：</p>
-<p><img src="/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/tag乱写之后出现的错误.png" alt="tag乱写之后出现的错误" height="500px"></p>
-<p>之后在网上查到的结果是在tags：里面写的东西是有一定格式的，必须按照特定的格式进行编写才不会出错，格式如下：</p>
-<p><img src="/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/tags的正确编写格式.png" alt="tags的正
-确编写格式" height="120px"></p>
-<p>在设置完tags之后可以在主页“所有文章”（如下面左图标识）中打开tags（如下面右图所示），就可以根据tag快速筛选相应的文章了。</p>
-<div>
-    <span>
-        <img src="/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/个人博客主页_标记所有文章.png" alt="个人博客主页_标记所有文章" width="49%">
-    </span>
-    <span>
-        <img src="/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/所有文章_tag作用.png" alt="所有文章_tag作用" width="49%">
-    </span>
-</div>
+        <h4 id="文章简介：记录查找数组中相应元素的算法。"><a href="#文章简介：记录查找数组中相应元素的算法。" class="headerlink" title="文章简介：记录查找数组中相应元素的算法。"></a>文章简介：记录查找数组中相应元素的算法。</h4><span id="more"></span>
+<p>查找数组中元素的方式有直接硬找的方式也有用二分法进行查找的方式。<br>直接查找的方式基本上对数组元素的排序没有什么特别的要求，只要是一个数组，它就能在数组里查找相应的元素，但缺点是需要对数组中的每一个元素进行比对，查找的效率较低。<br>下面的例子是硬找的方式：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArraySearch</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line">        System.out.println(indexSearch(arr, <span class="number">4</span>));</span><br><span class="line">        System.out.println(indexSearch(arr, <span class="number">9</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 这个方法用来查找数组中是否含有自己想要查找的元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr       是我们想在其中查找对应元素的数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> element   是我们想在数组中查找的元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span>          大于等于0的返回值表示我们想查找的元素在对应数组中的下标，-1的返回值表示没有找到相应的元素</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">indexSearch</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> element)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i] == element) &#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">-1</span><br></pre></td></tr></table></figure>
+<p>二分法查找的好处是查找的速度整体上相对于硬找要快一些，因为它并不需要对每一个元素都进行比较，但缺点是对查找的数组有一定的要求，数组中的元素要有一定的顺序，所以，从某种意义上来讲，二分法查找只是针对与数字的查找。<br>下面是一个二分法查找的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArraySearch2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">16</span>, <span class="number">32</span>, <span class="number">64</span>, <span class="number">128</span>, <span class="number">256</span>, <span class="number">512</span>, <span class="number">1024</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> result = binarySearch2(nums, <span class="number">3</span>);</span><br><span class="line">        <span class="keyword">if</span>(result &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;目标元素3在数组中的下标为&quot;</span> + result);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;在该数组中没有找到目标元素3&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 顺便复习下三目运算符</span></span><br><span class="line">        System.out.println(binarySearch2(nums, <span class="number">4</span>) &gt;= <span class="number">0</span> ?</span><br><span class="line">                <span class="string">&quot;目标元素4在数组中的下标为&quot;</span> + binarySearch2(nums, <span class="number">4</span>) : <span class="string">&quot;在该数组中没有找到目标元素4&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 静态方法，查找目标元素在数组中是否存在，并返回元素下标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr 待查找目标元素的数组，要提前排好序，从小排到大</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> target 待查找的目标元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span>  大于等于0的返回值是目标元素的下标，-1表示在该数组中没有目标元素</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch2</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 记录数组第一个元素的下标和最后一个元素的下标</span></span><br><span class="line">        <span class="keyword">int</span> arrHead = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> arrEnd = arr.length - <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 只要待查找数组的头下标小于或等于尾下标</span></span><br><span class="line">        <span class="keyword">while</span>(arrHead &lt;= arrEnd)&#123;</span><br><span class="line">            <span class="comment">// 得到中间元素的下标</span></span><br><span class="line">            <span class="keyword">int</span> mid = (arrHead + arrEnd) / <span class="number">2</span>;</span><br><span class="line">            <span class="comment">// 如果中间的元素与我们要查找的元素一样，返回此时的mid，即相应元素的下标</span></span><br><span class="line">            <span class="keyword">if</span>(arr[mid] == target) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr[mid] &lt; target)&#123;    <span class="comment">// 如果此时，中间元素比目标元素小，则目标元素可能在中间元素的右边</span></span><br><span class="line">                arrHead = mid + <span class="number">1</span>;           <span class="comment">// 头下标变为中间元素的下标加1，此时，待查找的区域减少了一半</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;                          <span class="comment">// 到这里，目标元素只有可能比中间元素小，在中间元素的左边</span></span><br><span class="line">                 arrEnd = mid - <span class="number">1</span>;          <span class="comment">// 尾下标变为中间元素的下标减1，此时，待查找区域减少了一半</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;  <span class="comment">// 如果上面的循环能跳出，则说明没有找到要查找的目标元素，返回-1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在该数组中没有找到目标元素3</span><br><span class="line">目标元素4在数组中的下标为2</span><br></pre></td></tr></table></figure>
       
 
       
@@ -182,6 +168,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -232,7 +229,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/10/30/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/11/25/Java%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -246,18 +243,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/11/11/java%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/11/29/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          java数组
+          Git基本使用
         
       </div>
     </a>
   
   
-    <a href="/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">51单片机学习笔记</div>
+    <a href="/2021/11/23/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/Hexo-yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo+yilia主题添加站点访问量统计</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -387,7 +384,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">51单片机</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hexo+yilia搭建个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -395,7 +400,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo+yilia搭建个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color1">51单片机</a>
               </li>
             
             <div class="clearfix"></div>
