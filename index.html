@@ -61,7 +61,7 @@
 		</nav>
 
 		<nav>
-			总文章数 10
+			总文章数 12
 		</nav>
 
 		<nav class="header-smart-menu">
@@ -142,6 +142,182 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-快速排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+	<div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
+    </h1>
+  
+
+        
+        <a href="/2022/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+  	<time datetime="2022-04-09T14:25:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-09</time>
+</a>
+
+        				
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="内容简介：Java-语言实现快速排序"><a href="#内容简介：Java-语言实现快速排序" class="headerlink" title="内容简介：Java 语言实现快速排序"></a>内容简介：Java 语言实现快速排序</h4><p>网上看到的实现快速排序的方法比较多的是以数组第一个数为标准值进行排序的方式，内种方式是左右两边各有一个指针（Java 里面不应该说指针，这里这是这样说比较好理解而已，可以理解为是一个代表数组下标的东西），在开始的时候分别指向数组的开头和结尾，指向开头的指针从左到右在数组中遍历，找到一个比标准值大的数字的时候就停下来，指向它，这个时候，刚开始指向右边的指针就开始动了，从右往左扫描，找寻比标准值小的数字，这个时候，两个找到的数字交换，交换完成之后，左边依旧找比标准值大的数字，右边依旧找比标准值小的数字，交换 … …  直到两个指针指向同一个数字未知，此时，将标准值与这个位置上的数字交换，当完成这一步的时候，以标准值为中心，左边的数字都是小于标准值的，右边的数字都是大于标准值的，此时，将这个数组已标准值为中心，分别对其左边部分和右边部分进行上述的过程，那么这两部分的数组而言，也会和上面一样 ，以一个标准值为中心，分为比它大的部分和比它小的部分，如此，我们适当想像一下，如果，一直这么分割下去，整个数组就会变得越来越有序，数组中的数据依照从小到大的顺序排列起来。</p>
+<p>而与上面的方法有点类似的，老师采用的方法 ，是以数组中间的数据为标准值，从左往右的顺序先找比标准值大的数据，再找比标准值小的数据，交换位置，但与上面有点不一样的地方是，在找数据的过程中，上面的方式只会对标准值进行一次交换，而老师的这种方法，在左右两个指针有一个指向标准值的时候，另外的一个指针就会找相应要找的数据，与这个标准值进行交换，最终，这个标准值可能会交换很多次，这个地方也是我刚开始听老师的课时始终无法理解的一个地方，因为我一直以为这个地方中，标准值不需要进行交换，但最后我拿起笔和纸将数组写在纸上，跟着代码一步一步模拟程序的运行的时候，才发现，其实，标准值的位置是一直有在改变的。</p>
+<p>具体老师的代码如下，好好理解的话还是可以看懂的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.sort.QuickSort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;-<span class="number">9</span>,<span class="number">78</span>,<span class="number">0</span>,<span class="number">23</span>,-<span class="number">567</span>,<span class="number">70</span>, -<span class="number">1</span>, -<span class="number">2</span>,&#125;;</span><br><span class="line">        quickSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.print(arr[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = left;</span><br><span class="line">        <span class="keyword">int</span> r = right;</span><br><span class="line">        <span class="keyword">int</span> pivot = arr[(left + right) / <span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">/* 这里在看视频的时候以为以中间的数字为基准，那么中间的数字就不会移动，理解的很久，最后，在纸和笔的帮助下，才发现，其		  实中间的那个标准值是有在移动地方的，所以，最终并不会发生因为中间值左右两边大于标准值和小于标准值的数据量不同而发生		      错误。</span></span><br><span class="line"><span class="comment">           果然纸和笔是YYDS</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            这里的两个循环的作用最主要就是找到可以交换的数字，一个比标准值大的，和一个标准值小的</span></span><br><span class="line"><span class="comment">            注意这里循环里面的条件从左边开始找比标准值大的或者等于标准值的，这个等于标准值很重要，</span></span><br><span class="line"><span class="comment">            这里是解决左右两边数据量不等的情况的地方之一</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="keyword">while</span>(arr[l] &lt; pivot)&#123;</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(arr[r] &gt; pivot)&#123;</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 有可能一上来就直接找到中间的值了，所以，退出的判断条件要放在这个地方</span></span><br><span class="line">            <span class="keyword">if</span>(l &gt;= r)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 没达到退出的条件，就交换数据，没什么好说的样子</span></span><br><span class="line">            temp = arr[r];</span><br><span class="line">            arr[r] = arr[l];</span><br><span class="line">            arr[l] = temp;</span><br><span class="line">            <span class="comment">// 这个地方就是重点了，如果数据量不等的话，那么这里就是找到能和标准值交换位置的地方，和标准值交换位置</span></span><br><span class="line">            <span class="keyword">if</span>(arr[l] == pivot)&#123;</span><br><span class="line">               r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(arr[r] == pivot)&#123;</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 这一段代码是用来解决栈溢出问题的，这种情况经过有限次分割之后，</span></span><br><span class="line">        <span class="comment">// 那个分割下来的数组不会改变了，一直都是那么长的数组，一直无限递归下去</span></span><br><span class="line">        <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">            l++;</span><br><span class="line">            r--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 脑子中对这个数组的情况要构建出一个大概的样子，再看这段代码，还是很好理解的</span></span><br><span class="line">        <span class="keyword">if</span>(left &lt; r)&#123;</span><br><span class="line">            quickSort(arr, left, r);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(right &gt; l)&#123;</span><br><span class="line">            quickSort(arr, r, right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>参考资料：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1E4411H73v?p=84&spm_id_from=pageDriver">【尚硅谷】数据结构与算法（Java数据结构与算法）_哔哩哔哩_bilibili</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java中代码块的执行性顺序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+	<div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/01/Java%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E6%89%A7%E8%A1%8C%E6%80%A7%E9%A1%BA%E5%BA%8F/">Java中代码块的执行性顺序</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/01/Java%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E6%89%A7%E8%A1%8C%E6%80%A7%E9%A1%BA%E5%BA%8F/" class="archive-article-date">
+  	<time datetime="2022-03-01T11:26:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-01</time>
+</a>
+
+        				
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="语句块的分类"><a href="#语句块的分类" class="headerlink" title="语句块的分类"></a>语句块的分类</h1><p>Java 中不同的语句块有不同的名字，现在我们先来看下在 Java 中都分别有那些语句块。</p>
+<h2 id="实例语句块"><a href="#实例语句块" class="headerlink" title="实例语句块"></a>实例语句块</h2><p>首先是实例语句块，样式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	java 语句;</span><br><span class="line">    java 语句;</span><br><span class="line">    java 语句;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实例语句块是放在类体中，主方法之外的，咋一看有点像是一个没有修饰符列表和返回值类型的方法。实例语句块的执行时间是：在每次调用构造方法时，构造方法执行之前执行。具体例子如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example01</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 主方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;主方法开始执行&quot;</span>);</span><br><span class="line">        <span class="keyword">new</span> Example01();</span><br><span class="line">        <span class="keyword">new</span> Example01();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 实例语句块</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是一个实例语句块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 无参构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Example01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是一个无参的构造方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">主方法开始执行</span><br><span class="line">我是一个实例语句块</span><br><span class="line">我是一个无参的构造方法</span><br><span class="line">我是一个实例语句块</span><br><span class="line">我是一个无参的构造方法</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>静态代码块和静态变量在类加载的时候执行，只能靠代码前后的顺序来决定谁先执行。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/01/Java%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E6%89%A7%E8%A1%8C%E6%80%A7%E9%A1%BA%E5%BA%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Java中的扩展运算符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
 	<div class="article-inner">
@@ -763,138 +939,10 @@
 
 
   
-    <article id="post-个人博客/我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-	<div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/27/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2021/10/27/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2021-10-26T17:41:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-27</time>
-</a>
-
-        				
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="文章简介：学习如何创建个人博客的第一天。"><a href="#文章简介：学习如何创建个人博客的第一天。" class="headerlink" title="文章简介：学习如何创建个人博客的第一天。"></a>文章简介：学习如何创建个人博客的第一天。</h4>
-        
-          <a class="article-more-a" href="/2021/10/27/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/10/27/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-个人博客/hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-	<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/27/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2021/10/27/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hello-world/" class="archive-article-date">
-  	<time datetime="2021-10-26T17:27:37.586Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-27</time>
-</a>
-
-        				
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="文章简介：使用hexo创建个人博客时hexo为我们自动创建的一篇文章，记录了hexo的一些基本操作。"><a href="#文章简介：使用hexo创建个人博客时hexo为我们自动创建的一篇文章，记录了hexo的一些基本操作。" class="headerlink" title="文章简介：使用hexo创建个人博客时hexo为我们自动创建的一篇文章，记录了hexo的一些基本操作。"></a>文章简介：使用hexo创建个人博客时hexo为我们自动创建的一篇文章，记录了hexo的一些基本操作。</h4>
-        
-          <a class="article-more-a" href="/2021/10/27/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/10/27/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </nav>
   
 
 
@@ -1014,6 +1062,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 数据结构与算法</a>
               </li>
             
             <div class="clearfix"></div>
