@@ -15,15 +15,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="文章简介：本文章记录了如何使用51单片机来点亮LED灯.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/板载LED原理图.png">
-<meta property="og:image" content="http://example.com/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/点亮第一颗板载LED灯.jpg">
-<meta property="og:image" content="http://example.com/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/蒙圈.jpg">
+<meta property="og:image" content="http://example.com/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/51单片机学习笔记/板载LED原理图.png">
+<meta property="og:image" content="http://example.com/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/51单片机学习笔记/点亮第一颗板载LED灯.jpg">
+<meta property="og:image" content="http://example.com/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/51单片机学习笔记/蒙圈.jpg">
 <meta property="article:published_time" content="2021-10-30T11:27:47.000Z">
 <meta property="article:modified_time" content="2021-12-09T15:55:04.541Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="51单片机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/板载LED原理图.png">
+<meta name="twitter:image" content="http://example.com/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/51单片机学习笔记/板载LED原理图.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -175,18 +175,18 @@
 
 <h1 id="单片机学习第一步：点亮51学习板上的板载LED灯"><a href="#单片机学习第一步：点亮51学习板上的板载LED灯" class="headerlink" title="单片机学习第一步：点亮51学习板上的板载LED灯"></a>单片机学习第一步：点亮51学习板上的板载LED灯</h1><p>点亮LED灯几乎就是单片机界的“Hello World！”，接下来就让我们尝试点亮51单片机学习板上的板载LED灯吧！</p>
 <p>首先，让我们来看一下板载LED的原理图：</p>
-<div align="center"><img src="/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/板载LED原理图.png" alt="板载LED原理图" width="400px"></div>
+<div align="center"><img src="51单片机学习笔记/板载LED原理图.png" alt="板载LED原理图" width="400px"></img></div>
 
 <p>通过原理图我们可以得知：板载LED有八个，且这八个LED灯的正极都连接到了同一个VCC（即正极）上，它们的负极分别接在了GPIO引脚P2组的0到7号引脚上，所以，想要点亮LED灯只需要将该LED灯连接的GPIO引脚变成低电平即可。</p>
 <p>执行修改引脚电平的操作，我们只需要操作对应GPIO组的寄存器即可，例如我们的LED灯是连接到P2组引脚上的，那么操作相应寄存器的语句就是：<br><code>P2 = OxFE;</code></p>
 <p>将程序编译后烧录到51单片机上，就可以看见单片机学习板的第一颗LED灯是亮的。</p>
 <div align="center">
-    <img src="/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/点亮第一颗板载LED灯.jpg" alt="点亮第一颗板载LED灯" width="400px">
+    <img src="51单片机学习笔记/点亮第一颗板载LED灯.jpg" alt="点亮第一颗板载LED灯" width="400px"></img>
 </div>
 
 <p>看到这里你是不是觉得有点蒙圈了，什么是GPIO引脚？什么是寄存器？烧录是什么？这灯怎么亮的？”P2 = 0xFE;”到底是什么意思？我到底在看什么？</p>
 <div align="center">
-    <img src="/2021/10/30/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/蒙圈.jpg" alt="蒙圈" width="150px">
+    <img src="51单片机学习笔记/蒙圈.jpg" alt="蒙圈" width="150px"></img>
 </div>
 嘻嘻！我也不知道，凡事要从简单的做起，现在只要知道怎么操作就可以了呀！  
 
@@ -417,6 +417,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">51单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
@@ -425,7 +429,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">51单片机</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 数据结构与算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,15 +441,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java 数据结构与算法</a>
               </li>
             
             <div class="clearfix"></div>
