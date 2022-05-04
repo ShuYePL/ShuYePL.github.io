@@ -6,22 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Git基本使用 | Hexo</title>
+  <title>Java中的扩展运算符 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Git基本使用的笔记（包括一些基本的Linux命令）">
+  <meta name="description" content="内容简介：以 Java 中的扩展运算符 +&#x3D; 分析扩展运算符的运算方式。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git基本使用">
-<meta property="og:url" content="http://example.com/2021/11/29/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="Java中的扩展运算符">
+<meta property="og:url" content="http://example.com/2022/02/27/Javase/Java%E4%B8%AD%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Git基本使用的笔记（包括一些基本的Linux命令）">
+<meta property="og:description" content="内容简介：以 Java 中的扩展运算符 +&#x3D; 分析扩展运算符的运算方式。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/11/29/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/忽略文件的相关配置.png">
-<meta property="article:published_time" content="2021-11-29T15:03:16.000Z">
-<meta property="article:modified_time" content="2021-11-30T08:50:07.571Z">
+<meta property="article:published_time" content="2022-02-27T03:24:50.000Z">
+<meta property="article:modified_time" content="2022-02-27T05:31:55.674Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="Git">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/11/29/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/忽略文件的相关配置.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -148,20 +147,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Javase/Java中的扩展运算符" class="article article-type-post " itemscope itemprop="blogPost">
 	<div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git基本使用
+      Java中的扩展运算符
     </h1>
   
 
         
-        <a href="/2021/11/29/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-11-29T15:03:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-29</time>
+        <a href="/2022/02/27/Javase/Java%E4%B8%AD%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6/" class="archive-article-date">
+  	<time datetime="2022-02-27T03:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-27</time>
 </a>
 
         				
@@ -169,89 +168,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Git基本使用的笔记（包括一些基本的Linux命令）"><a href="#Git基本使用的笔记（包括一些基本的Linux命令）" class="headerlink" title="Git基本使用的笔记（包括一些基本的Linux命令）"></a>Git基本使用的笔记（包括一些基本的Linux命令）</h4><span id="more"></span>
-<h1 id="Linus基础命令"><a href="#Linus基础命令" class="headerlink" title="Linus基础命令"></a>Linus基础命令</h1><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="center">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">cd</td>
-<td align="center">改变当前目录</td>
-</tr>
-<tr>
-<td align="center">cd ..</td>
-<td align="center">回到上一一级目录</td>
-</tr>
-<tr>
-<td align="center">clear</td>
-<td align="center">清屏</td>
-</tr>
-<tr>
-<td align="center">pwd</td>
-<td align="center">显示当前目录路径</td>
-</tr>
-<tr>
-<td align="center">ls</td>
-<td align="center">列出当前目录中的所有文件</td>
-</tr>
-<tr>
-<td align="center">touch</td>
-<td align="center">新建一个文件</td>
-</tr>
-<tr>
-<td align="center">rm</td>
-<td align="center">删除文件</td>
-</tr>
-<tr>
-<td align="center">rm -r</td>
-<td align="center">删除一个文件夹</td>
-</tr>
-<tr>
-<td align="center">mkdir</td>
-<td align="center">新建一个文件夹</td>
-</tr>
-<tr>
-<td align="center">mv</td>
-<td align="center">移动文件</td>
-</tr>
-<tr>
-<td align="center">reset</td>
-<td align="center">重新初始化终端（加清屏）</td>
-</tr>
-<tr>
-<td align="center">history</td>
-<td align="center">查看使用命令历史</td>
-</tr>
-<tr>
-<td align="center">help</td>
-<td align="center">帮助</td>
-</tr>
-<tr>
-<td align="center">exit</td>
-<td align="center">退出</td>
-</tr>
-<tr>
-<td align="center">#</td>
-<td align="center">注释</td>
-</tr>
-</tbody></table>
-<p>注意：千万不要尝试rm -rf / （这是删除电脑中全部文件）</p>
-<h1 id="Git环境配置"><a href="#Git环境配置" class="headerlink" title="Git环境配置"></a>Git环境配置</h1><p>查看环境配置：git config -l<br>查看系统的本地配置：git config –system –list<br>查看全局配置（用户自己配置的）：git config –global–list<br>Git相关文件配置位置（和上面用命令查看的结果一样）：</p>
-<ul>
-<li>Git\etc\gitconfig : Git安装目录下的gitconfig  （–system 是系统级的配置文件）</li>
-<li>C:\Users\Administrator\.gitconfig : 只适用于当前登录用户的配置  （–global 全局的配置文件）   </li>
-</ul>
-<p>设置自己的用户名和邮箱，用于后面提交文件<br>git config –global user.name “用户名”<br>git config –global user.email 使用的邮箱</p>
-<h1 id="Git项目搭建"><a href="#Git项目搭建" class="headerlink" title="Git项目搭建"></a>Git项目搭建</h1><p>初始化项目：git init（在当前目录下初始化一个项目，会创建出一些必要的文件。这是一个隐藏起来的文件，记得打开查看隐藏文件的选项）<br>仓库克隆（用这个也可以创建一个项目）：git clone 项目的url  </p>
-<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><p>下面操作的文件都是在Git项目根目录下创建的<br>查看文件状态：git status<br>将文件添加到暂存区：git add 文件名  或者  git add . （这里一点表示添加所有文件）<br>将文件添加到本地仓库：git commit -m “第一次提交”（-m表示添加提交信息，后面跟着的就是相应的信息）<br>添加忽略文件（有些文件我们并不需要上传，可以编写一个忽略文件控制我们不要上传哪一些文件）：<br><img src="/2021/11/29/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/忽略文件的相关配置.png"></p>
-<h1 id="SSH公钥配置"><a href="#SSH公钥配置" class="headerlink" title="SSH公钥配置"></a>SSH公钥配置</h1><p>生成公钥：ssh-keygen -t rsa (-t rsa表示使用rsa这种加密算法)，后面一直回车就行。<br>这条命令要在C:\Users\Administrator\.ssh文件下执行，执行之后生成两个文件，id_rsa和id_rsa.pub，前者是私钥，后者是公钥，公钥文件中的内容粘贴到gitee或者github上相应的位置就可以了。  </p>
-<h1 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h1><p>在初始化的项目文件下（或clone下来的文件夹下）直接创建相应的文件即可。</p>
-<h1 id="忽略文件编写"><a href="#忽略文件编写" class="headerlink" title="忽略文件编写"></a>忽略文件编写</h1><p>将工程上传Github上时可以选择性的上传一些文件，一些中间生成的文件我们可以不必上传，将其忽略，配置.gitignore文件即可实现上传时的自动过滤。<br>文件的书写可以参考上面文件操作中的内容，当然Github官网已经为我们写好了一些.gitignore文件的配置，直接粘贴复制就可以了（老cv工程师了）。<br>网址：<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a>  </p>
+        <h4 id="内容简介：以-Java-中的扩展运算符-分析扩展运算符的运算方式。"><a href="#内容简介：以-Java-中的扩展运算符-分析扩展运算符的运算方式。" class="headerlink" title="内容简介：以 Java 中的扩展运算符 += 分析扩展运算符的运算方式。"></a>内容简介：以 Java 中的扩展运算符 += 分析扩展运算符的运算方式。</h4><span id="more"></span>
+
+<p>首先，我们先来看一段代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line">i += <span class="number">10</span>;</span><br><span class="line">System.out.println(i); <span class="comment">// 输出结果为 20</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> j = <span class="number">10</span>;</span><br><span class="line">j = j + <span class="number">10</span>;</span><br><span class="line">System.out.println(j); <span class="comment">// 输出结果为 20</span></span><br></pre></td></tr></table></figure>
+
+<p>诶，这段代码的 i 和 j 的输出结果都是一样，那是不是说在 Java 中 <code>i += 10</code> 的底层运算原理类似于 <code> i = i + 10</code> 呢？我们先来看下下面的一段代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b = <span class="number">10</span>;</span><br><span class="line">b += <span class="number">10</span>;</span><br><span class="line">System.out.println(b); <span class="comment">// 输出结果为 20</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">byte</span> e = <span class="number">10</span>;</span><br><span class="line">e = e + <span class="number">10</span>;     <span class="comment">// 哎呀，这里报错了：java: 不兼容的类型: 从int转换到byte可能会有损失</span></span><br><span class="line">System.out.println(e); </span><br></pre></td></tr></table></figure>
+
+<p>这是怎么回事呢？为什么 byte 类型的 b 变量使用 += 运算符自加 10 就不会报错，而同为 byte 类型的 e 变量使用 <code>e = e + 10</code> 的方式自加 10 却报错了？</p>
+<p>让我们来好好分析一下 e 变量的这一段代码，我们知道，在 Java 中，整数类型的字面量都是默认为 int 类型的，也就是说在 <code>e = e + 10</code> 这行代码中，右边的 10 是一个 int 类型的整数，在与 byte类型的 e 变量做加法运算的时候，e 变量要先自动转换成 int 类型的数据再与 10 进行加法运算最终，赋值符号 = 右边的结果是一个 int 类型的数据，而我们的 e 变量是一个 byte 类型的数据，在进行赋值操作时，是由大容量数据类型转换成小容量数据类型，按理来说要进行强制类型转换，但我们的代码中没有进行强制类型转换，所以出现了相应的报错：java: 不兼容的类型: 从int转换到byte可能会有损失</p>
+<p>如此说来，+= 运算符的运算方式与 <code>e = e + 10</code> 的运算方式还是有不一样的地方的，+= 运算符的运算方式类似于下面的这一段代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> k = <span class="number">10</span>;</span><br><span class="line">k = (<span class="keyword">byte</span>)(k + <span class="number">10</span>);</span><br><span class="line">System.out.println(k); <span class="comment">// 输出结果为 20</span></span><br></pre></td></tr></table></figure>
+
+<p>所以，在 Java 中的扩展运算符在进行运算的时候其实都是有进行强制类型转换的。</p>
 <hr>
-<p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1FE411P7B3?p=6&amp;spm_id_from=pageDriver">https://www.bilibili.com/video/BV1FE411P7B3?p=6&amp;spm_id_from=pageDriver</a></p>
+<p>参考材料：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Rx411876f">Java零基础教程视频（适合Java 0基础，Java初学入门）_哔哩哔哩_bilibili</a></p>
 
       
 
@@ -265,7 +197,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -321,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/11/29/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/27/Javase/Java%E4%B8%AD%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,18 +271,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/12/10/vscode%E4%B8%AD%E5%87%BA%E7%8E%B0Open-a-folder-or-workspace-File-Open-Folder-%E6%8A%A5%E9%94%99/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/03/01/Javase/Java%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E6%89%A7%E8%A1%8C%E6%80%A7%E9%A1%BA%E5%BA%8F/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          vscode中出现Open a folder or workspace... (File -&gt; Open Folder)报错
+          Java中代码块的执行性顺序
         
       </div>
     </a>
   
   
-    <a href="/2021/11/21/Javase/Java-main%E6%96%B9%E6%B3%95%E4%B8%AD%E5%8F%82%E6%95%B0String-args%E7%9A%84%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java main方法中参数String[] args的用法</div>
+    <a href="/2021/12/12/Javase/Java-String%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java String笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -477,7 +413,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mysql 与 JDBC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,23 +441,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Javase</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mysql 与 JDBC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
