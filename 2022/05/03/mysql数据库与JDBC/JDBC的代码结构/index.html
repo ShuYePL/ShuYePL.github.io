@@ -16,7 +16,7 @@
 <meta property="og:description" content="内容简介：JDBC基本的代码结构，一定要记住！！！">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-03T13:42:00.000Z">
-<meta property="article:modified_time" content="2022-05-04T07:56:22.097Z">
+<meta property="article:modified_time" content="2022-05-04T15:18:57.863Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="mysql 与 JDBC">
 <meta name="twitter:card" content="summary">
@@ -169,6 +169,16 @@
       
         <h4 id="内容简介：JDBC基本的代码结构，一定要记住！！！"><a href="#内容简介：JDBC基本的代码结构，一定要记住！！！" class="headerlink" title="内容简介：JDBC基本的代码结构，一定要记住！！！"></a>内容简介：JDBC基本的代码结构，一定要记住！！！</h4><span id="more"></span>
 
+<p>JDBC 要处理的事情，一共有七步：</p>
+<ul>
+<li>连接数据库</li>
+<li>注册驱动</li>
+<li>获取连接</li>
+<li>获取数据库操作对象</li>
+<li>执行 SQL</li>
+<li>处理结果集</li>
+<li>释放资源</li>
+</ul>
 <p>这个是没有对输入结果进行预先处理的代码，会发生 sql 注入。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Demo000.demo001;</span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBCTest001</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ResourceBundle bundle = ResourceBundle.getBundle(<span class="string">&quot;jdbc&quot;</span>);</span><br><span class="line">        String driver = bundle.getString(<span class="string">&quot;driver&quot;</span>);</span><br><span class="line">        String url = bundle.getString(<span class="string">&quot;url&quot;</span>);</span><br><span class="line">        String user = bundle.getString(<span class="string">&quot;user&quot;</span>);</span><br><span class="line">        String password = bundle.getString(<span class="string">&quot;password&quot;</span>);</span><br><span class="line"></span><br><span class="line">        Connection conn = <span class="keyword">null</span>;</span><br><span class="line">        Statement stmt = <span class="keyword">null</span>;</span><br><span class="line">        ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Class.forName(driver);</span><br><span class="line">            conn = DriverManager.getConnection(url,user,password);</span><br><span class="line">            stmt = conn.createStatement();</span><br><span class="line">            rs = stmt.executeQuery(<span class="string">&quot;select deptno,ename,sal from emp&quot;</span>);</span><br><span class="line">            <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">                String deptno = rs.getString(<span class="string">&quot;deptno&quot;</span>);</span><br><span class="line">                String ename = rs.getString(<span class="string">&quot;ename&quot;</span>);</span><br><span class="line">                String sal = rs.getString(<span class="string">&quot;sal&quot;</span>);</span><br><span class="line">                System.out.println(deptno + <span class="string">&quot; &quot;</span> + ename + <span class="string">&quot; &quot;</span> + sal);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(rs != <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">try</span>&#123;</span><br><span class="line">                    rs.close();</span><br><span class="line">                &#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(stmt != <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">try</span>&#123;</span><br><span class="line">                    stmt.close();</span><br><span class="line">                &#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(conn != <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">try</span>&#123;</span><br><span class="line">                    conn.close();</span><br><span class="line">                &#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -408,15 +418,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Javase</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Javase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -428,15 +438,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Java 数据结构与算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
             
             <div class="clearfix"></div>
