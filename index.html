@@ -61,7 +61,7 @@
 		</nav>
 
 		<nav>
-			总文章数 25
+			总文章数 26
 		</nav>
 
 		<nav class="header-smart-menu">
@@ -142,6 +142,121 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-JavaWeb/ServletConfig是什么" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+	<div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/04/JavaWeb/ServletConfig%E6%98%AF%E4%BB%80%E4%B9%88/">ServletConfig 是什么</a>
+    </h1>
+  
+
+        
+        <a href="/2022/06/04/JavaWeb/ServletConfig%E6%98%AF%E4%BB%80%E4%B9%88/" class="archive-article-date">
+  	<time datetime="2022-06-04T13:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-04</time>
+</a>
+
+        				
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="内容简介：ServletConfig-的简单介绍，以及相关方法的介绍"><a href="#内容简介：ServletConfig-的简单介绍，以及相关方法的介绍" class="headerlink" title="内容简介：ServletConfig 的简单介绍，以及相关方法的介绍"></a>内容简介：ServletConfig 的简单介绍，以及相关方法的介绍</h4><p>ServletConfig 是一个接口，完整接口名：jakarta.servlet.ServletConfig，所以这是 Servlet 规范中的一员；这个接口由 WEB 服务器来实现； 不同的 Servlet 对象会对应不同的 ServletConfig 对象（这里说的 ServletConfig 对象指的是实现了ServletConfig 接口的对象，不要以为接口可以创建对象）；Servlet 对象是又 WEB 服务器创建的，创建的时间是在创建 Servlet 对象的时候，同时创建了 ServletConfig 对象；ServletConfig 对象里面包装了 Servlet 对象的配置信息，这里面的信息是 web.xml 文件中 &lt;servlet&gt;&lt;/servlet&gt; 标签中的内容，所以我们可以在这个标签内配置 Servlet 对象的初始信息，配置的方式是在 &lt;servlet&gt;&lt;/servlet&gt; 中添加一个 &lt;ini-param&gt;&lt;param-param&gt; 标签，具体的代码示例如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>config1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.bjpowernode.javaweb.ConfigTestServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>driver<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>com.mysql.cj.jdbc.Driver<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>url<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>jdbc:mysql://localhost:3306/bjpowernode<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>user<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>root<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>password<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>123456<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在 param-name 标签中书写的是参数的名称，在 param-value 标签中书写的是参数的值，这些信息在 WEB 服务器启动的时候都会被封装进与对应 Servlet 对象相匹配的 ServletConfig 对象中，这样，在程序中我们就可以通过 ServletConfig 对象来获取这些配置信息了，获取的程序例程如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.bjpowernode.javaweb;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.*;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigTestServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        <span class="comment">// 获取 ServletConfig 对象</span></span><br><span class="line">        ServletConfig config = <span class="keyword">this</span>.getServletConfig();     <span class="comment">// 这个是因为继承了 GenericServlet 类，所以会有一个 ServletConfig 对象的属性</span></span><br><span class="line">        <span class="comment">// 获取 ServletConfig 对象的参数集合</span></span><br><span class="line">        Enumeration&lt;String&gt; initParameterNames = config.getInitParameterNames();</span><br><span class="line">        <span class="comment">// 遍历集合输出参数的名称和它的值</span></span><br><span class="line">        <span class="keyword">while</span>(initParameterNames.hasMoreElements())&#123;</span><br><span class="line">            String parameterName = initParameterNames.nextElement();        <span class="comment">// 得到参数的名字</span></span><br><span class="line">            out.print(parameterName);</span><br><span class="line">            out.print(<span class="string">&quot; = &quot;</span>);</span><br><span class="line">            out.print(config.getInitParameter(parameterName));              <span class="comment">// 通过参数的名字获取参数的值并打印</span></span><br><span class="line">            out.print(<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里面涉及到 ServletConfig 的两个方法，第一个是 getInitParameterNames() ，它可以返回一个遍历对象，遍历的结果是输出我们在 xml 文件中给这个 Servlet 对象配置的参数名称，第二个方法是 getInitParameter(String parameterName) ，这个可以通过传入参数的名称来得到参数的值</p>
+<p>在浏览器中的输出结果如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">password = 123456</span><br><span class="line">driver = com.mysql.cj.jdbc.Driver</span><br><span class="line">user = root</span><br><span class="line">url = jdbc:mysql://localhost:3306/bjpowernode</span><br></pre></td></tr></table></figure>
+
+<p>虽然上面讲了两个方法的使用，但在平时开发的时候我们基本上可能不会使用上面的方法去获取迭代对象，因为我们写的类是继承 GrnericServlet 类的，而 GenericServlet 类中已经为我们编写好了获取参数信息的方法，这两个方法就是使用和我们上面的代码一样的方式去获取配置信息的，所以我们可以直接通过调用这两个方法来获取我们想要的信息就可以了，使用方式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.bjpowernode.javaweb;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.*;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigTestServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        <span class="comment">// 获取迭代对象</span></span><br><span class="line">        Enumeration&lt;String&gt; names = <span class="keyword">this</span>.getInitParameterNames();</span><br><span class="line">        <span class="comment">// 对迭代对象进行迭代输出</span></span><br><span class="line">        <span class="keyword">while</span>(names.hasMoreElements())&#123;</span><br><span class="line">            String name = names.nextElement();</span><br><span class="line">            String value = <span class="keyword">this</span>.getInitParameter(name);</span><br><span class="line">            out.print(name + <span class="string">&quot; = &quot;</span> + value);</span><br><span class="line">            out.print(<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出的结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">password = 123456</span><br><span class="line">driver = com.mysql.cj.jdbc.Driver</span><br><span class="line">user = root</span><br><span class="line">url = jdbc:mysql://localhost:3306/bjpowernode</span><br></pre></td></tr></table></figure>
+
+<p>~~经典白学了属于是 O(∩_∩)O哈哈~~~</p>
+<p>应该能听得懂上面是开玩笑的意思吧</p>
+<hr>
+<p>使用 ServletConfig 对象的 getServletName 方法可以获取 Servlet 的名字</p>
+<hr>
+<p>接下来讲的是 ServletContext 对象</p>
+<p>首先是通过 ServletConfig 对象获取 ServletContext 对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.bjpowernode.javaweb;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.*;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigTestServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取 ServletConfig 对象</span></span><br><span class="line">        ServletConfig config = <span class="keyword">this</span>.getServletConfig();     <span class="comment">// 这个是因为继承了 GenericServlet 类，所以会有一个 ServletConfig 对象的属性</span></span><br><span class="line">        <span class="comment">// 通过 ServletConfig 对象获取 ServletContext 对象</span></span><br><span class="line">        ServletContext application = config.getServletContext();</span><br><span class="line">        <span class="comment">// 将得到的对象输出，看下结果是什么</span></span><br><span class="line">        out.print(application);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.core.ApplicationContextFacade@6fd1dd80</span><br></pre></td></tr></table></figure>
+
+<p>同样的，和上面的获取 Servlet 对象参数的方式一样，GenericServlet 类中已经封装好了，直接使用就可以获取这个 ServletContext 对象了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.bjpowernode.javaweb;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.*;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigTestServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取 ServletConfig 对象</span></span><br><span class="line">        ServletConfig config = <span class="keyword">this</span>.getServletConfig();     <span class="comment">// 这个是因为继承了 GenericServlet 类，所以会有一个 ServletConfig 对象的属性</span></span><br><span class="line"></span><br><span class="line">        ServletContext application = <span class="keyword">this</span>.getServletContext();</span><br><span class="line">        out.print(application);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.core.ApplicationContextFacade@6b23e3c1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>总结：ServletConfig 接口一共有四个方法</p>
+<ul>
+<li>public String getInitParameter(String name);</li>
+<li>public Enumeration<String> getInitParameterNames();</String></li>
+<li>public ServletContext getServletContext();</li>
+<li>public String getServletName();</li>
+</ul>
+<p>因为我们编写的 Servlet 类一般是继承 GenericServlet 类的，这几个方法在 GenericServlet 类中都有同名的方法，所以我们可以直接在自己编写的类中使用 this. 加上面的方法名的方式进行调用，获取的结果都是一样的</p>
+<hr>
+<p>参考资料：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Z3411C7NZ?p=12&amp;share_source=copy_web">https://www.bilibili.com/video/BV1Z3411C7NZ?p=12&amp;share_source=copy_web</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-JavaWeb/适配器模式改造Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
 	<div class="article-inner">
@@ -800,79 +915,6 @@
 
 
   
-    <article id="post-Windows系统设置/Win11显示后缀名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-	<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/24/Windows%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/Win11%E6%98%BE%E7%A4%BA%E5%90%8E%E7%BC%80%E5%90%8D/">Win11 文件显示后缀名</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/24/Windows%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/Win11%E6%98%BE%E7%A4%BA%E5%90%8E%E7%BC%80%E5%90%8D/" class="archive-article-date">
-  	<time datetime="2022-05-24T02:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-
-        				
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="内容简介：Win11-文件显示后缀名的方法"><a href="#内容简介：Win11-文件显示后缀名的方法" class="headerlink" title="内容简介：Win11 文件显示后缀名的方法"></a>内容简介：Win11 文件显示后缀名的方法</h4>
-        
-          <a class="article-more-a" href="/2022/05/24/Windows%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/Win11%E6%98%BE%E7%A4%BA%E5%90%8E%E7%BC%80%E5%90%8D/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Windows 系统设置</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
@@ -975,10 +1017,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -995,11 +1033,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Gitee</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mysql 与 JDBC</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1011,11 +1045,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows 系统设置</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows 系统设置</a>
+                <a href="javascript:void(0)" class="js-tag color3">mysql 与 JDBC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Gitee</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
