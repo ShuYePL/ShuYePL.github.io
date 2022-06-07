@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Git基本使用 | ShuYePL</title>
+  <title>HttpServlet | ShuYePL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内容简介：Git基本使用的笔记（包括一些基本的Linux命令）">
+  <meta name="description" content="内容简介：HTTP 协议和 HttpServlet 类的简单了解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git基本使用">
-<meta property="og:url" content="http://example.com/2021/11/29/Git/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="HttpServlet">
+<meta property="og:url" content="http://example.com/2022/06/07/JavaWeb/HttpServlet/index.html">
 <meta property="og:site_name" content="ShuYePL">
-<meta property="og:description" content="内容简介：Git基本使用的笔记（包括一些基本的Linux命令）">
+<meta property="og:description" content="内容简介：HTTP 协议和 HttpServlet 类的简单了解">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/11/29/Git/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/忽略文件的相关配置.png">
-<meta property="article:published_time" content="2021-11-29T15:03:16.000Z">
-<meta property="article:modified_time" content="2022-05-27T07:31:41.793Z">
+<meta property="og:image" content="http://example.com/2022/06/07/JavaWeb/HttpServlet/001.png">
+<meta property="article:published_time" content="2022-06-07T07:25:00.000Z">
+<meta property="article:modified_time" content="2022-06-07T07:28:44.172Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="Git">
+<meta property="article:tag" content="JavaWeb">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/11/29/Git/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/忽略文件的相关配置.png">
+<meta name="twitter:image" content="http://example.com/2022/06/07/JavaWeb/HttpServlet/001.png">
   
     <link rel="alternative" href="/atom.xml" title="ShuYePL" type="application/atom+xml">
   
@@ -148,20 +148,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git/Git基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaWeb/HttpServlet" class="article article-type-post " itemscope itemprop="blogPost">
 	<div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git基本使用
+      HttpServlet
     </h1>
   
 
         
-        <a href="/2021/11/29/Git/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-11-29T15:03:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-29</time>
+        <a href="/2022/06/07/JavaWeb/HttpServlet/" class="archive-article-date">
+  	<time datetime="2022-06-07T07:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-07</time>
 </a>
 
         				
@@ -169,89 +169,135 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="内容简介：Git基本使用的笔记（包括一些基本的Linux命令）"><a href="#内容简介：Git基本使用的笔记（包括一些基本的Linux命令）" class="headerlink" title="内容简介：Git基本使用的笔记（包括一些基本的Linux命令）"></a>内容简介：Git基本使用的笔记（包括一些基本的Linux命令）</h4><span id="more"></span>
-<h1 id="Linus基础命令"><a href="#Linus基础命令" class="headerlink" title="Linus基础命令"></a>Linus基础命令</h1><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="center">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">cd</td>
-<td align="center">改变当前目录</td>
-</tr>
-<tr>
-<td align="center">cd ..</td>
-<td align="center">回到上一一级目录</td>
-</tr>
-<tr>
-<td align="center">clear</td>
-<td align="center">清屏</td>
-</tr>
-<tr>
-<td align="center">pwd</td>
-<td align="center">显示当前目录路径</td>
-</tr>
-<tr>
-<td align="center">ls</td>
-<td align="center">列出当前目录中的所有文件</td>
-</tr>
-<tr>
-<td align="center">touch</td>
-<td align="center">新建一个文件</td>
-</tr>
-<tr>
-<td align="center">rm</td>
-<td align="center">删除文件</td>
-</tr>
-<tr>
-<td align="center">rm -r</td>
-<td align="center">删除一个文件夹</td>
-</tr>
-<tr>
-<td align="center">mkdir</td>
-<td align="center">新建一个文件夹</td>
-</tr>
-<tr>
-<td align="center">mv</td>
-<td align="center">移动文件</td>
-</tr>
-<tr>
-<td align="center">reset</td>
-<td align="center">重新初始化终端（加清屏）</td>
-</tr>
-<tr>
-<td align="center">history</td>
-<td align="center">查看使用命令历史</td>
-</tr>
-<tr>
-<td align="center">help</td>
-<td align="center">帮助</td>
-</tr>
-<tr>
-<td align="center">exit</td>
-<td align="center">退出</td>
-</tr>
-<tr>
-<td align="center">#</td>
-<td align="center">注释</td>
-</tr>
-</tbody></table>
-<p>注意：千万不要尝试rm -rf / （这是删除电脑中全部文件）</p>
-<h1 id="Git环境配置"><a href="#Git环境配置" class="headerlink" title="Git环境配置"></a>Git环境配置</h1><p>查看环境配置：git config -l<br>查看系统的本地配置：git config –system –list<br>查看全局配置（用户自己配置的）：git config –global–list<br>Git相关文件配置位置（和上面用命令查看的结果一样）：</p>
+        <h4 id="内容简介：HTTP-协议和-HttpServlet-类的简单了解"><a href="#内容简介：HTTP-协议和-HttpServlet-类的简单了解" class="headerlink" title="内容简介：HTTP 协议和 HttpServlet 类的简单了解"></a>内容简介：HTTP 协议和 HttpServlet 类的简单了解</h4><span id="more"></span>
+
+<h2 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h2><p>W3C 制定的一种超文本传输协议，B （浏览器）和 S（服务器）之间相互传输数据都要遵守， 这样 B（浏览器） 和 S（服务器） 可以实现解耦合，超文本的意思是不是普通的文本，而是声音、图像、视频等流媒体。</p>
+<p>HTTP 协议包括：</p>
 <ul>
-<li>Git\etc\gitconfig : Git安装目录下的gitconfig  （–system 是系统级的配置文件）</li>
-<li>C:\Users\Administrator\.gitconfig : 只适用于当前登录用户的配置  （–global 全局的配置文件）   </li>
+<li>请求协议：浏览器向服务器发送数据时要遵守的一套标准，协议中规定了数据的具体格式，请求协议包含四部分<ul>
+<li>请求行<ul>
+<li>请求方式（七种）<ul>
+<li>get（*）</li>
+<li>post（*）</li>
+<li>delete</li>
+<li>put</li>
+<li>head</li>
+<li>options</li>
+<li>trace</li>
 </ul>
-<p>设置自己的用户名和邮箱，用于后面提交文件<br>git config –global user.name “用户名”<br>git config –global user.email 使用的邮箱</p>
-<h1 id="Git项目搭建"><a href="#Git项目搭建" class="headerlink" title="Git项目搭建"></a>Git项目搭建</h1><p>初始化项目：git init（在当前目录下初始化一个项目，会创建出一些必要的文件。这是一个隐藏起来的文件，记得打开查看隐藏文件的选项）<br>仓库克隆（用这个也可以创建一个项目）：git clone 项目的url  </p>
-<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><p>下面操作的文件都是在Git项目根目录下创建的<br>查看文件状态：git status<br>将文件添加到暂存区：git add 文件名  或者  git add . （这里一点表示添加所有文件）<br>将文件添加到本地仓库：git commit -m “第一次提交”（-m表示添加提交信息，后面跟着的就是相应的信息）<br>添加忽略文件（有些文件我们并不需要上传，可以编写一个忽略文件控制我们不要上传哪一些文件）：<br><img src="/2021/11/29/Git/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/忽略文件的相关配置.png"></p>
-<h1 id="SSH公钥配置"><a href="#SSH公钥配置" class="headerlink" title="SSH公钥配置"></a>SSH公钥配置</h1><p>生成公钥：ssh-keygen -t rsa (-t rsa表示使用rsa这种加密算法)，后面一直回车就行。<br>这条命令要在C:\Users\Administrator\.ssh文件下执行，执行之后生成两个文件，id_rsa和id_rsa.pub，前者是私钥，后者是公钥，公钥文件中的内容粘贴到gitee或者github上相应的位置就可以了。  </p>
-<h1 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h1><p>在初始化的项目文件下（或clone下来的文件夹下）直接创建相应的文件即可。</p>
-<h1 id="忽略文件编写"><a href="#忽略文件编写" class="headerlink" title="忽略文件编写"></a>忽略文件编写</h1><p>将工程上传Github上时可以选择性的上传一些文件，一些中间生成的文件我们可以不必上传，将其忽略，配置.gitignore文件即可实现上传时的自动过滤。<br>文件的书写可以参考上面文件操作中的内容，当然Github官网已经为我们写好了一些.gitignore文件的配置，直接粘贴复制就可以了（老cv工程师了）。<br>网址：<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a>  </p>
+</li>
+<li>URI ：统一资源标识符，代表网络中某个资源的名字，无法定位资源（ URL 是统一资源定位符，代表网络中的某个资源，能定位到资源，URL 包括 URI ）</li>
+<li>协议版本号</li>
+</ul>
+</li>
+<li>请求头<ul>
+<li>请求的主机</li>
+<li>主机的端口</li>
+<li>浏览器信息</li>
+<li>平台信息</li>
+<li>cookie等信息</li>
+<li>…</li>
+</ul>
+</li>
+<li>空白行：区分请求头和请求体</li>
+<li>请求体：向服务器发送的具体数据</li>
+</ul>
+</li>
+<li>响应协议：服务器向浏览器发送数据时要遵守的一套标准，协议中规定了数据的具体格式，响应协议包含四部分<ul>
+<li>状态行<ul>
+<li>协议版本号（例子：HTTP/1.1）</li>
+<li>状态码（不同的响应结果对应不同的号码，例子：200 – &gt; 响应成功，正常结束    404 – &gt; 访问的资源不存在，是前端错误    405 – &gt; 前端发送的请求与后端请求的处理方式不一致时发生    500 – &gt; 服务器端的程序出现了异常，是服务器端的错误    总结：以 4 开头的一般是浏览器端的错误，以 5 开头的一般是服务器端的错误） </li>
+<li>状态的描述信息（ok – &gt; 表示正常成功结束    not found – &gt; 表示资源找不到）</li>
+</ul>
+</li>
+<li>响应头<ul>
+<li>响应的内容类型</li>
+<li>响应的内容长度</li>
+<li>相应的时间</li>
+<li>…</li>
+</ul>
+</li>
+<li>空白行：用来分割响应头和响应体的</li>
+<li>响应体：响应的正文，是一个长的字符串，会被浏览器渲染，解释和执行，变成显示的效果</li>
+</ul>
+</li>
+</ul>
+<p><del>请求协议中包含的内容我想了一下， <strong>行头行体</strong> 好像背起来还可以</del></p>
+<p>请求：浏览器向服务器发送数据 – &gt; request</p>
+<p>响应：服务器向浏览器发送数据 – &gt; response</p>
+<h2 id="GET-请求和-POST-请求"><a href="#GET-请求和-POST-请求" class="headerlink" title="GET 请求和 POST 请求"></a>GET 请求和 POST 请求</h2><p>到目前为止 ，对于 POST 请求，只有使用表单，且在表单中指明使用 POST 时，才会发送 POST 请求，而对于 GET 请求的情况就比较多了，像下面的情况都是 GET 的请求</p>
+<ul>
+<li>浏览器地址栏中输入 URL ，回车</li>
+<li>浏览器中点击超链接</li>
+<li>使用 form 表单提交数据时，如果没有写 method 数值的值为 post ， 是 get</li>
+</ul>
+<p>两个请求的区别</p>
+<ul>
+<li><p>get 请求会在 URI 的后面加上一个 ？ ，然后将数据放在后面，发送的数据会回显在浏览器的地址栏上，而 post 请求发送数据的时候会在请求体中发送数据，不会回显到浏览器地址栏上，他们发送的数据格式都是一样的，都是 name=value&amp;name=value&amp;name=value… ，只是放的地方不一样而已</p>
+<ul>
+<li>name 是 form 表单中 input 标签的 name 属性值</li>
+<li>vlue 是 form 表单中 input 标签的 value 属性值</li>
+</ul>
+</li>
+<li><p>get 请求只能发送普通字符串，字符串的长度有限制，无法发送大数据量，post 请求可以发送任何类型的数据，可以发送大量的数据，没有长度的限制</p>
+</li>
+<li><p>在 W3C 中说，get 请求比较适合从服务器端获取数据，post 请求比较适合向服务器端传送数据</p>
+</li>
+<li><p>get 请求是安全的，因为只是向服务器请求数据，而 post 请求是危险的，因为它要向服务器发送数据，如果数据通过后门的方式进入服务器中，服务器是危险的    <del>？？？这个是相对于服务器而言的？</del></p>
+</li>
+<li><p>get 请求支持缓存，post 请求不支持缓存（缓存是指的浏览器的缓存，get 请求的结果都会被浏览器缓存下来，post 则不会，利用时间戳可以让每个 get 请求都从服务器获取数据，而不使用浏览器的缓存）</p>
+</li>
+<li><p>大部分的 form 表单提交，都是 post 方式；如果表单中有敏感信息， 也一般是用 post 方式；文件上传，也是使用 post</p>
+</li>
+</ul>
+<h2 id="模板方法设计模式"><a href="#模板方法设计模式" class="headerlink" title="模板方法设计模式"></a>模板方法设计模式</h2><p>模板方法定义核心的算法骨架，具体的实现可以延迟到子类中去实现（定义为抽象方法）。模板类一般是抽象类，模板类中的模板方法一般是要加 final 修饰的，防止子类修改。</p>
+<h2 id="HttpServlet"><a href="#HttpServlet" class="headerlink" title="HttpServlet"></a>HttpServlet</h2><p>jakarta.servlet.http 包下的类：</p>
+<ul>
+<li>jakarta.servlet.http.HttpServlet – &gt; HTTP 协议专用的 Servlet 类，抽象类</li>
+<li>jakarta.servlet.http.HttpServletRequest – &gt; HTTP 协议专用的请求对象<ul>
+<li>封装了请求协议的全部内容（ WEB 服务器将请求协议中的数据解析出来之后封装到这个对象当中）</li>
+</ul>
+</li>
+<li>jakarta.servlet.http.HttpServletResponse – &gt; HTTP 协议专用的响应对象<ul>
+<li>响应 HTTP 协议到浏览器</li>
+</ul>
+</li>
+</ul>
+<p>如果在 HttpServlet 的子类中没有重写父类的 doGet 等方法，那么，在子类调用 doGet 方法的时候就会报错，因为 HttpServlet 中不允许使用它内部的 doGet 等方法（这些方法就只会报错），这些方法必须要在子类中重写</p>
+<p>doPost 和 doGet 方法不要在 HttpServlet 的子类中一起重写，这样没有意义（下面说到子类的，没有明确说明都是指的 HttpServlet 的子类）</p>
+<p>HttpSevlet 类是用模板方法构造起来的类，所以，我们在编写继承了 HttpServlet 类的子类时，只需要重写相应的 doPost 方法，或者 doGet 方法等方法就可以了</p>
+<h2 id="Servlet-类的开发步骤"><a href="#Servlet-类的开发步骤" class="headerlink" title="Servlet 类的开发步骤"></a>Servlet 类的开发步骤</h2><ul>
+<li>编写 Servlet 类继承 HttpServlet 类</li>
+<li>重写 doGet 方法或者 doPost 方法</li>
+<li>配置 Servlet 类到 web.xml 文件中</li>
+<li>准备前端页面（from 表单），指定请求路径</li>
+</ul>
+<h2 id="web-应用的欢迎页面"><a href="#web-应用的欢迎页面" class="headerlink" title="web 应用的欢迎页面"></a>web 应用的欢迎页面</h2><p>在访问路径中没有指定具体访问资源的时候（直接访问站点，也就是相应的 webapp ），会自动访问我们设置的访问页面</p>
+<p>如何设置：在 web.xml 文件中将欢迎页面的文件配置到 welcome-file-list 标签中就行了，这里我直接在 web 文件夹下创建一个 index.html 文件，内容如下</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>这是站点的欢迎页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>欢迎访问我的页面<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后是 web.xml 中的内容</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;https://jakarta.ee/xml/ns/jakartaee&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">&quot;5.0&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--这里下面的内容就是在配置欢迎页面了--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在浏览器中直接访问该 web 应用的站点就可以直接访问这个页面了</p>
+<p><img src="/2022/06/07/JavaWeb/HttpServlet/001.png" alt="001"></p>
+<p>从上面的内容中我们可以看到， welcome-file 标签中要填写的是欢迎页面的文件，而且该文件是从 webapp 的根目录进行查找的</p>
+<p>欢迎页面可以配置多个：在 welcome-file-list 标签中可以配置多个 welcome-file 标签，这些标签的优先级越靠上的越高，上面的页面没有找到的，就向下查找</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>page1/page2/page.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span>		<span class="comment">&lt;!--这个优先级比下面的标签高--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span>					<span class="comment">&lt;!--如果上面的页面没有找到，就会找这个页面--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：如果我们配置的欢迎页面在 webapp 的根目录下，而且名字为 index.html 时可以不用配置欢迎页面，当我们访问站点的时候会自动访问这个页面（因为 Tomcat 服务器已经为我们配置好了）</p>
+<p>配置欢迎页面的地方有两个：</p>
+<ul>
+<li>webapp 里面的 web.xml 文件中，是局部的配置</li>
+<li>CATALINA_HOME/conf/web.xml 文件中，是全局配置</li>
+</ul>
+<p>当两个配置同时存在是，局部优先，CATALINA_HOME/conf/web.xml 文件中的配置信息为</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>欢迎页面就是一个资源，可以是静态资源（ html ），也可以是动态资源（ servlet ）</p>
+<h2 id="WEB-INF-目录"><a href="#WEB-INF-目录" class="headerlink" title="WEB_INF 目录"></a>WEB_INF 目录</h2><p>这个目录下的文件是受保护的，在浏览器中不能通过路径直接访问</p>
 <hr>
-<p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1FE411P7B3?p=6&amp;spm_id_from=pageDriver">https://www.bilibili.com/video/BV1FE411P7B3?p=6&amp;spm_id_from=pageDriver</a></p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Z3411C7NZ?p=22&amp;share_source=copy_web">https://www.bilibili.com/video/BV1Z3411C7NZ?p=22&amp;share_source=copy_web</a></p>
 
       
 
@@ -265,7 +311,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
         		</li>
       		
 		</ul>
@@ -321,7 +367,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/11/29/Git/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/06/07/JavaWeb/HttpServlet/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,18 +381,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/12/10/vscode%E9%94%99%E8%AF%AF/vscode%E4%B8%AD%E5%87%BA%E7%8E%B0Open-a-folder-or-workspace-File-Open-Folder-%E6%8A%A5%E9%94%99/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vscode中出现Open a folder or workspace... (File -&gt; Open Folder)报错
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/11/21/Javase/Java-main%E6%96%B9%E6%B3%95%E4%B8%AD%E5%8F%82%E6%95%B0String-args%E7%9A%84%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java main方法中参数String[] args的用法</div>
+    <a href="/2022/06/06/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/XSHELL%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">XSHELL 和 Xftp 的下载安装</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -373,7 +410,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E7%AE%80%E4%BB%8B%EF%BC%9AGit%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E7%9A%84%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8C%85%E6%8B%AC%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E7%9A%84Linux%E5%91%BD%E4%BB%A4%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">内容简介：Git基本使用的笔记（包括一些基本的Linux命令）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linus%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number"></span> <span class="toc-text">Linus基础命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">Git环境配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-number"></span> <span class="toc-text">Git项目搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number"></span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSH%E5%85%AC%E9%92%A5%E9%85%8D%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">SSH公钥配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number"></span> <span class="toc-text">新建项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99"><span class="toc-number"></span> <span class="toc-text">忽略文件编写</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E7%AE%80%E4%BB%8B%EF%BC%9AHTTP-%E5%8D%8F%E8%AE%AE%E5%92%8C-HttpServlet-%E7%B1%BB%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">内容简介：HTTP 协议和 HttpServlet 类的简单了解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-%E5%8D%8F%E8%AE%AE"><span class="toc-number"></span> <span class="toc-text">HTTP 协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET-%E8%AF%B7%E6%B1%82%E5%92%8C-POST-%E8%AF%B7%E6%B1%82"><span class="toc-number"></span> <span class="toc-text">GET 请求和 POST 请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number"></span> <span class="toc-text">模板方法设计模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HttpServlet"><span class="toc-number"></span> <span class="toc-text">HttpServlet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet-%E7%B1%BB%E7%9A%84%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4"><span class="toc-number"></span> <span class="toc-text">Servlet 类的开发步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-%E5%BA%94%E7%94%A8%E7%9A%84%E6%AC%A2%E8%BF%8E%E9%A1%B5%E9%9D%A2"><span class="toc-number"></span> <span class="toc-text">web 应用的欢迎页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB-INF-%E7%9B%AE%E5%BD%95"><span class="toc-number"></span> <span class="toc-text">WEB_INF 目录</span></a>
                     </div>
                 </span>
             </div>
