@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | ShuYePL</title>
+  <title>HttpServletRequest | ShuYePL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ShuYePL">
-<meta property="og:url" content="http://example.com/archives/2022/page/3/index.html">
+  <meta name="description" content="内容简介：HttpServletRequest 相关知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HttpServletRequest">
+<meta property="og:url" content="http://example.com/2022/06/08/JavaWeb/HttpServletRequest%E6%8E%A5%E5%8F%A3/index.html">
 <meta property="og:site_name" content="ShuYePL">
+<meta property="og:description" content="内容简介：HttpServletRequest 相关知识点">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/06/08/JavaWeb/HttpServletRequest%E6%8E%A5%E5%8F%A3/001.png">
+<meta property="article:published_time" content="2022-06-08T14:34:00.000Z">
+<meta property="article:modified_time" content="2022-06-08T14:34:51.742Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JavaWeb">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/06/08/JavaWeb/HttpServletRequest%E6%8E%A5%E5%8F%A3/001.png">
   
     <link rel="alternative" href="/atom.xml" title="ShuYePL" type="application/atom+xml">
   
@@ -141,146 +148,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JavaWeb/HttpServletRequest接口" class="article article-type-post " itemscope itemprop="blogPost">
+	<div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HttpServletRequest
+    </h1>
+  
+
+        
+        <a href="/2022/06/08/JavaWeb/HttpServletRequest%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
+  	<time datetime="2022-06-08T14:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-08</time>
+</a>
+
+        				
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="内容简介：HttpServletRequest-相关知识点"><a href="#内容简介：HttpServletRequest-相关知识点" class="headerlink" title="内容简介：HttpServletRequest 相关知识点"></a>内容简介：HttpServletRequest 相关知识点</h4><span id="more"></span>
+
+<h2 id="这个对接口实现类的对象是什么样子的"><a href="#这个对接口实现类的对象是什么样子的" class="headerlink" title="这个对接口实现类的对象是什么样子的"></a>这个对接口实现类的对象是什么样子的</h2><p>我们先在 java 程序中获取这个接口实现类的一个对象，看下这个对象是什么</p>
+<p>java 程序代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shuyepl.javaweb.servlet.httpservlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RequestTest</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">        	<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        out.print(request);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.connector.RequestFacade@bc5e0e6</span><br></pre></td></tr></table></figure>
+
+<p>结论：WEB 服务器实现了 HttpServletRequest 的接口</p>
+<p>HttpServletRequest 对象由 WEB 服务器负责创建，这个对象中封装了 HTTP 的请求协议（用户发送的请求被封装进了这个对象中），这个对象的声明周期很短，只在当前的请求中有效（ response 也是如此）</p>
+<h2 id="相应的方法"><a href="#相应的方法" class="headerlink" title="相应的方法"></a>相应的方法</h2><p>这些方法可以用来获取前端浏览器用户提交的数据</p>
+<ul>
+<li>String getParameterMap(String name)<ul>
+<li>获取 Map</li>
+</ul>
+</li>
+<li>Map&lt;String, String[]&gt; getParameterMap()<ul>
+<li>获取 Map 集合中所有的 key</li>
+</ul>
+</li>
+<li>Enumeration<String> getParameterNames()    **<ul>
+<li> 根据 key 获取 Map 集合的 value</li>
+</ul>
+</String></li>
+<li>String[] getParameterValues(java.lang.String name)    **<ul>
+<li>获取 value 这个一维数组当中的第一个元素</li>
+</ul>
+</li>
+<li>String getRemoteAddr();<ul>
+<li>获取客户端的 IP 地址</li>
+</ul>
+</li>
+<li>setCharacterEncoding(“UTF-8”);<ul>
+<li>设置请求体的字符集，用来解决 post 请求的乱码问题，不能解决 get 请求的乱码问题（Tomcat 10 及之后的版本默认字符集为 UTF-8 不会出现中文乱码问题，但之前的版本会，而且还有可能会出现输出到页面中的内容也乱码的情况，这个时候，要这样设置：response.setContentType(“text/html;charset=utf-8”) ）</li>
+</ul>
+</li>
+<li>String getContextPath()<ul>
+<li>获取应用的根路径</li>
+</ul>
+</li>
+<li>String getmethod<ul>
+<li>获取请求方式</li>
+</ul>
+</li>
+<li>String getRequestURI()<ul>
+<li>获取请求的 URI</li>
+</ul>
+</li>
+<li>String getServletPath()<ul>
+<li>获取 Servlet 路径</li>
+</ul>
+</li>
+</ul>
+<h2 id="请求域对象"><a href="#请求域对象" class="headerlink" title="请求域对象"></a>请求域对象</h2><p>HttpServletRequest 的对象是请求域的对象，一次请求对应一个请求对象，一个请求对象对应一个请求域对象，请求域的对象要比应用域的对象范围小，生命周期短很多，请求域中同样也有应用域中有的方法，所以，在两者都能完成需求的情况下，选择对象范围更小的，节省资源</p>
+<ul>
+<li>void setAttribute(String name, Object obj);</li>
+<li>Object getAttribute(String name);</li>
+<li>void removeAttribute(String name);</li>
+</ul>
+<p>虽然和应用域的方法一样，但是 ，如果在一个请求域中绑定数据，想在另外一个请求域中获取数据这是不可能的， 因为每一次访问都对应着不同的请求域，不同域中的信息不相通</p>
+<p>要是想将不同的 Servlet 对象放到一次请求中，可以使用 Servlet 中的请求转发机制（在一个 Servlet 对象中执行到一半的时候跳转到另外的一个 Servlet 对象中）：使用 request 对象的 getRequestDispatcher() 方法，方法中填写的参数是想要转到的 Servlet 对象的路径（就是 web.xml 中配置的 url-pattern 标签中的内容），得到一个转发器对象，然后使用转发器的 forword 方法，将 request 对象和 response 对象发送出去，下面是一个例子</p>
+<p>AServlet 类中的内容</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">+<span class="keyword">package</span> com.shuyepl.javaweb.servlet.RequestTest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">        	<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        Date newTime = <span class="keyword">new</span> Date();  <span class="comment">// 这个是要添加的参数值</span></span><br><span class="line">        request.setAttribute(<span class="string">&quot;systime&quot;</span>, newTime);   <span class="comment">// 添加参数</span></span><br><span class="line">        request.getRequestDispatcher(<span class="string">&quot;/b&quot;</span>).forward(request,response);   <span class="comment">// 将 request 对象转发到 BServlet 对象中</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>BServlet 类中的内容</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shuyepl.javaweb.servlet.RequestTest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">        	<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        out.print(<span class="string">&quot;&lt;h1&gt;hello, this is BServlet&lt;h1&gt;&quot;</span>);</span><br><span class="line">        <span class="comment">// 在 BServlet 对象中调用转发过来的 Request 对象获取在 AServlet 对象中添加的参数</span></span><br><span class="line">        Object systime = request.getAttribute(<span class="string">&quot;systime&quot;</span>);</span><br><span class="line">        out.print(systime); <span class="comment">// 打印获取到的对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;https://jakarta.ee/xml/ns/jakartaee&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">&quot;5.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>a<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.shuyepl.javaweb.servlet.RequestTest.AServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>a<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/a<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>b<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.shuyepl.javaweb.servlet.RequestTest.BServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>b<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/b<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>网页中访问 AServlet 的结果</p>
+<p><img src="/2022/06/08/JavaWeb/HttpServletRequest%E6%8E%A5%E5%8F%A3/001.png" alt="001"></p>
+<p>可以看到，这里执行了 BServlet 对象的程序，输出了调用 BServlet 类时才会输出的内容</p>
+<p>注意：转发的对象不一定要是 Servlet 对象，只要是 WEB 容器中的合法资源就可以，只是在转发的时候要注意路径不要写错了</p>
+<hr>
+<p>参考资料：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Z3411C7NZ?p=27&amp;share_source=copy_web">https://www.bilibili.com/video/BV1Z3411C7NZ?p=27&amp;share_source=copy_web</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/03/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8EJDBC/JDBC%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2022-05-03T13:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/03/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8EJDBC/JDBC%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/">JDBC的代码结构</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mysql 与 JDBC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/06/08/JavaWeb/HttpServletRequest%E6%8E%A5%E5%8F%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2022-04-09T14:25:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-09</time>
-</a>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/06/07/JavaWeb/HttpServlet/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HttpServlet</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E7%AE%80%E4%BB%8B%EF%BC%9AHttpServletRequest-%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">内容简介：HttpServletRequest 相关知识点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E4%B8%AA%E5%AF%B9%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0%E7%B1%BB%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84"><span class="toc-number"></span> <span class="toc-text">这个对接口实现类的对象是什么样子的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%BA%94%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number"></span> <span class="toc-text">相应的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%9F%9F%E5%AF%B9%E8%B1%A1"><span class="toc-number"></span> <span class="toc-text">请求域对象</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/27/Javase/Java%E4%B8%AD%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6/" class="archive-article-date">
-  	<time datetime="2022-02-27T03:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-27</time>
-</a>
+        
+    </div>
+</aside>
 
-        </div>
-    	 
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/27/Javase/Java%E4%B8%AD%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6/">Java中的扩展运算符</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2022/page/2/">上一页</a><a class="page-number" href="/archives/2022/">1</a><a class="page-number" href="/archives/2022/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+
   
 
 
@@ -310,8 +406,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
