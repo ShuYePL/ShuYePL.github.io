@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>session和cookie联合使用时的注意事项 | 番薯日记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内容简介：偶然遇到的一点点小问题以及反思。前言今天试着自己回想杜老师构建 Javaweb 视频中的项目创建过程，想在里面添加一个登录功能，然后在使用 cookie 实现十天免登录功能的时候出现了一点问题，具体的问题是：在第一次打开项目欢迎页面的时候，勾选上十天免登录并登录该系统，然后直接关闭浏览器，因为我在程序中设置了 cookie ，将用户的信息保存在本地，所以在第二次我打开浏览器，输入项目连接">
+  <meta name="description" content="内容简介：偶然遇到的一点点小问题以及反思。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="session和cookie联合使用时的注意事项">
 <meta property="og:url" content="http://example.com/2022/09/24/JavaWeb/%E5%B7%B2%E7%BB%8F%E5%8F%91%E5%B8%83%E5%88%B0halo/session%E5%92%8Ccookie%E8%81%94%E5%90%88%E4%BD%BF%E7%94%A8%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
 <meta property="og:site_name" content="番薯日记">
-<meta property="og:description" content="内容简介：偶然遇到的一点点小问题以及反思。前言今天试着自己回想杜老师构建 Javaweb 视频中的项目创建过程，想在里面添加一个登录功能，然后在使用 cookie 实现十天免登录功能的时候出现了一点问题，具体的问题是：在第一次打开项目欢迎页面的时候，勾选上十天免登录并登录该系统，然后直接关闭浏览器，因为我在程序中设置了 cookie ，将用户的信息保存在本地，所以在第二次我打开浏览器，输入项目连接">
+<meta property="og:description" content="内容简介：偶然遇到的一点点小问题以及反思。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-09-24T14:34:00.000Z">
-<meta property="article:modified_time" content="2022-09-24T08:13:51.941Z">
+<meta property="article:modified_time" content="2022-10-01T01:42:59.770Z">
 <meta property="article:author" content="ShuYePL">
 <meta property="article:tag" content="JavaWeb">
 <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
 		</nav>
 
 		<nav>
-			总文章数 54
+			总文章数 55
 		</nav>
 
 		<nav class="header-smart-menu">
@@ -183,7 +183,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="内容简介：偶然遇到的一点点小问题以及反思。"><a href="#内容简介：偶然遇到的一点点小问题以及反思。" class="headerlink" title="内容简介：偶然遇到的一点点小问题以及反思。"></a>内容简介：偶然遇到的一点点小问题以及反思。</h4><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天试着自己回想杜老师构建 Javaweb 视频中的项目创建过程，想在里面添加一个登录功能，然后在使用 cookie 实现十天免登录功能的时候出现了一点问题，具体的问题是：在第一次打开项目欢迎页面的时候，勾选上十天免登录并登录该系统，然后直接关闭浏览器，因为我在程序中设置了 cookie ，将用户的信息保存在本地，所以在第二次我打开浏览器，输入项目连接并回车的时候，本应该自动登录并加载该项目的操作页面的，但实际的情况是，报错了，(⊙o⊙)… ，说是找不到 session 对象，session 对象为 null ，我就很奇怪了，我关闭浏览器到我再次打开浏览器之间的时间也就几分钟之内的事吧，我设置了 session 对象的超时销毁时间是 30 分钟，在服务器中应该还有这个 session 对象的呀，怎么就变成 null 了。</p>
+        <h4 id="内容简介：偶然遇到的一点点小问题以及反思。"><a href="#内容简介：偶然遇到的一点点小问题以及反思。" class="headerlink" title="内容简介：偶然遇到的一点点小问题以及反思。"></a>内容简介：偶然遇到的一点点小问题以及反思。</h4><span id="more"></span>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天试着自己回想杜老师构建 Javaweb 视频中的项目创建过程，想在里面添加一个登录功能，然后在使用 cookie 实现十天免登录功能的时候出现了一点问题，具体的问题是：在第一次打开项目欢迎页面的时候，勾选上十天免登录并登录该系统，然后直接关闭浏览器，因为我在程序中设置了 cookie ，将用户的信息保存在本地，所以在第二次我打开浏览器，输入项目连接并回车的时候，本应该自动登录并加载该项目的操作页面的，但实际的情况是，报错了，(⊙o⊙)… ，说是找不到 session 对象，session 对象为 null ，我就很奇怪了，我关闭浏览器到我再次打开浏览器之间的时间也就几分钟之内的事吧，我设置了 session 对象的超时销毁时间是 30 分钟，在服务器中应该还有这个 session 对象的呀，怎么就变成 null 了。</p>
 <h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>之后去找了一下资料，看了一些关于 session 和 cookie 的文章，终于找到了问题，这个问题其实很简单，就是我没有将 sessionid 保存到本地中，它默认保存到了浏览器的缓存中了，当我关闭浏览器的时候，这个缓存就被清除了，没有了 sessionid ，那也就没有办法找到之前保存在服务器端的对应 session 了，而且我设置的获取 session 的语句是 <code>request.getSession(false)</code> ，在没有获取到对应 session 的情况下，返回值是 null ，所以，现在一切都解释通了，那我为什么会犯这种错误呢 。</p>
 <h1 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h1><p>我之前跟着老杜的视频在看的时候，session 的笔记和 cookie 的笔记是分开来写的，也就是说这两部分的内容在我脑子里面是分开的，我没有将两部分统一起来，而这两部分内容在使用的时候是需要联合起来考虑一些问题的，这也就导致了今天的这个问题。</p>
 
@@ -478,19 +480,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">Javase</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">springmvc</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Javase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,19 +500,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows 系统设置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mysql 与 JDBC</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java 数据结构与算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows 系统设置</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +516,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color3">mysql 与 JDBC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">esp32</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 数据结构与算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,6 +533,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">加速器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">esp32</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
             
             <div class="clearfix"></div>
