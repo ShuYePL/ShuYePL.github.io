@@ -236,7 +236,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(74)</small>
+                <small>(73)</small>
             
         </div>
     </li>
@@ -443,7 +443,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="74">
+<input type="hidden" id="yelog_site_posts_number" value="73">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -546,10 +546,6 @@
             </li>
         
             <li class="article-tag-list-item">
-                <i class="iconfont icon-tag"></i><a>PCB 设计</a>
-            </li>
-        
-            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>springmvc</a>
             </li>
         
@@ -638,15 +634,6 @@
            data-author="" >
             <span class="post-title" title="软考笔记">软考笔记</span>
             <span class="post-date" title="2022-11-03 22:34:00">2022/11/03</span>
-        </a>
-        
-        
-        <a  class="All "
-           href="/2022/10/27/PCB%E8%AE%BE%E8%AE%A1/"
-           data-tag="PCB 设计"
-           data-author="" >
-            <span class="post-title" title="PCB 设计">PCB 设计</span>
-            <span class="post-date" title="2022-10-27 23:10:00">2022/10/27</span>
         </a>
         
         
@@ -830,20 +817,20 @@
         </a>
         
         
-        <a  class="All Javase "
-           href="/2022/09/24/Javase/%E5%B7%B2%E6%90%AC%E8%BF%90%E5%88%B0halo%E7%9A%84%E6%96%87%E7%AB%A0/java%20%E6%97%A0%E6%95%88%E7%9A%84%E7%9B%AE%E6%A0%87%E5%8F%91%E8%A1%8C%E7%89%88%2016/"
-           data-tag="Javase"
-           data-author="" >
-            <span class="post-title" title="java 无效的目标发行版 16">java 无效的目标发行版 16</span>
-            <span class="post-date" title="2022-09-24 22:34:00">2022/09/24</span>
-        </a>
-        
-        
         <a  class="All esp32 "
            href="/2022/09/24/esp32/%E5%B7%B2%E4%B8%8A%E4%BC%A0%E5%88%B0halo%E5%8D%9A%E5%AE%A2/esp32%E4%B8%8A%E4%BC%A0%E6%8A%A5%E9%94%99/"
            data-tag="esp32"
            data-author="" >
             <span class="post-title" title="esp32上传报错">esp32上传报错</span>
+            <span class="post-date" title="2022-09-24 22:34:00">2022/09/24</span>
+        </a>
+        
+        
+        <a  class="All Javase "
+           href="/2022/09/24/Javase/%E5%B7%B2%E6%90%AC%E8%BF%90%E5%88%B0halo%E7%9A%84%E6%96%87%E7%AB%A0/java%20%E6%97%A0%E6%95%88%E7%9A%84%E7%9B%AE%E6%A0%87%E5%8F%91%E8%A1%8C%E7%89%88%2016/"
+           data-tag="Javase"
+           data-author="" >
+            <span class="post-title" title="java 无效的目标发行版 16">java 无效的目标发行版 16</span>
             <span class="post-date" title="2022-09-24 22:34:00">2022/09/24</span>
         </a>
         
@@ -1279,7 +1266,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-07-04 20:10:24'>2022-06-05 20:32</time>
+            Created At : <time class="date" title='Updated At: 2023-03-04 16:33:24'>2022-06-05 20:32</time>
         
     </div>
     <div class="article-meta">
@@ -1349,7 +1336,7 @@
 <p>这个输出的结果就是你的现在这个 webapp 所配置的根路径，像我这里获取 AServlet 的页面时在浏览器中写入的路径为：<a target="_blank" rel="noopener" href="http://localhost:9000/context/a">http://localhost:9000/context/a</a> ，所以这里我获取的根路径就是 /context</p>
 <h3 id="public-String-getRealPath-String-Path"><a href="#public-String-getRealPath-String-Path" class="headerlink" title="public String getRealPath(String Path)"></a>public String getRealPath(String Path)</h3><p>获取文件的绝对路径</p>
 <p> 这里我先在 web 文件夹下创建一个文件</p>
-<p><img src="http://img.shuyepl.com/202207042010790.png" alt="001"></p>
+<p><img src="https://img.shuyepl.com/202207042010790.png" alt="001"></p>
 <p>然后我们获取一下这个文件的绝对路径</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.bjpowernode.javaweb.servlet;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.*;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        <span class="comment">// 获取 ServletContext 对象</span></span><br><span class="line">        ServletContext application = <span class="keyword">this</span>.getServletContext();</span><br><span class="line">        <span class="comment">// 获取并输出文件的绝对路径</span></span><br><span class="line">        out.println(application.getRealPath(<span class="string">&quot;/hello.txt&quot;</span>));	<span class="comment">// 这里的 / 可以不用加</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 

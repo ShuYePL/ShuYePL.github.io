@@ -236,7 +236,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(74)</small>
+                <small>(73)</small>
             
         </div>
     </li>
@@ -443,7 +443,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="74">
+<input type="hidden" id="yelog_site_posts_number" value="73">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -546,10 +546,6 @@
             </li>
         
             <li class="article-tag-list-item">
-                <i class="iconfont icon-tag"></i><a>PCB 设计</a>
-            </li>
-        
-            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>springmvc</a>
             </li>
         
@@ -638,15 +634,6 @@
            data-author="" >
             <span class="post-title" title="软考笔记">软考笔记</span>
             <span class="post-date" title="2022-11-03 22:34:00">2022/11/03</span>
-        </a>
-        
-        
-        <a  class="All "
-           href="/2022/10/27/PCB%E8%AE%BE%E8%AE%A1/"
-           data-tag="PCB 设计"
-           data-author="" >
-            <span class="post-title" title="PCB 设计">PCB 设计</span>
-            <span class="post-date" title="2022-10-27 23:10:00">2022/10/27</span>
         </a>
         
         
@@ -830,20 +817,20 @@
         </a>
         
         
-        <a  class="All Javase "
-           href="/2022/09/24/Javase/%E5%B7%B2%E6%90%AC%E8%BF%90%E5%88%B0halo%E7%9A%84%E6%96%87%E7%AB%A0/java%20%E6%97%A0%E6%95%88%E7%9A%84%E7%9B%AE%E6%A0%87%E5%8F%91%E8%A1%8C%E7%89%88%2016/"
-           data-tag="Javase"
-           data-author="" >
-            <span class="post-title" title="java 无效的目标发行版 16">java 无效的目标发行版 16</span>
-            <span class="post-date" title="2022-09-24 22:34:00">2022/09/24</span>
-        </a>
-        
-        
         <a  class="All esp32 "
            href="/2022/09/24/esp32/%E5%B7%B2%E4%B8%8A%E4%BC%A0%E5%88%B0halo%E5%8D%9A%E5%AE%A2/esp32%E4%B8%8A%E4%BC%A0%E6%8A%A5%E9%94%99/"
            data-tag="esp32"
            data-author="" >
             <span class="post-title" title="esp32上传报错">esp32上传报错</span>
+            <span class="post-date" title="2022-09-24 22:34:00">2022/09/24</span>
+        </a>
+        
+        
+        <a  class="All Javase "
+           href="/2022/09/24/Javase/%E5%B7%B2%E6%90%AC%E8%BF%90%E5%88%B0halo%E7%9A%84%E6%96%87%E7%AB%A0/java%20%E6%97%A0%E6%95%88%E7%9A%84%E7%9B%AE%E6%A0%87%E5%8F%91%E8%A1%8C%E7%89%88%2016/"
+           data-tag="Javase"
+           data-author="" >
+            <span class="post-title" title="java 无效的目标发行版 16">java 无效的目标发行版 16</span>
             <span class="post-date" title="2022-09-24 22:34:00">2022/09/24</span>
         </a>
         
@@ -1279,7 +1266,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-10-01 13:37:35'>2022-09-30 21:11</time>
+            Created At : <time class="date" title='Updated At: 2023-03-04 16:38:21'>2022-09-30 21:11</time>
         
     </div>
     <div class="article-meta">
@@ -1323,10 +1310,10 @@
 <li><p>首先，IDEA 里面创建一个 maven 项目，选择 maven-archetype-webapp 模板。</p>
 </li>
 <li><p>补充模板缺失的文件，补充之后的文件结构如下</p>
-<p><img src="http://img.shuyepl.com/202209302119466.png" alt="202209003"></p>
+<p><img src="https://img.shuyepl.com/202209302119466.png" alt="202209003"></p>
 <p>其中，web.xml 文件和 index.jsp 文件在原本的模板中就有，但是，有点老了，删掉重建。</p>
 <p>spirngmvc.xml 文件的创建使用已有的模板，创建方式如下：</p>
-<p><img src="http://img.shuyepl.com/202209302120936.png" alt="202209004"></p>
+<p><img src="https://img.shuyepl.com/202209302120936.png" alt="202209004"></p>
 </li>
 <li><p>接下来配置三个主要文件的内容，这三个文件分别是 springmvc.xml、pom.xml、web.xml<br>这三个文件主要配置的内容如下：<br>pom.xml ：配置依赖、配置资源文件的路径。<br>主要配置两个依赖：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 添加springmvc框架的依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 添加tomcat servlet的依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
