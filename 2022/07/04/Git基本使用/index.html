@@ -1279,7 +1279,25 @@
 <h1 id="Git项目搭建"><a href="#Git项目搭建" class="headerlink" title="Git项目搭建"></a>Git项目搭建</h1><p>初始化项目：git init（在当前目录下初始化一个项目，会创建出一些必要的文件。这是一个隐藏起来的文件，想看的话记得打开查看隐藏文件的选项）<br>仓库克隆（用这个也可以创建一个项目）：git clone 项目的url  </p>
 <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><p>下面操作的文件都是在Git项目根目录下创建的<br>查看文件状态：git status<br>将文件添加到暂存区：git add 文件名  或者  git add . （这里一点表示添加所有文件）<br>将文件添加到本地仓库：git commit -m “第一次提交”（-m表示添加提交信息，后面跟着的就是相应的信息）<br>添加忽略文件（有些文件我们并不需要上传，可以编写一个忽略文件控制我们不要上传哪一些文件）：  </p>
 <p><img src="/2022/07/04/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/202207041941134.png" alt="忽略文件的相关配置"></p>
-<h1 id="SSH公钥配置"><a href="#SSH公钥配置" class="headerlink" title="SSH公钥配置"></a>SSH公钥配置</h1><p>生成公钥：ssh-keygen -t rsa (-t rsa表示使用rsa这种加密算法)，后面一直回车就行。<br>这条命令要在C:\Users\Administrator\.ssh文件下执行，执行之后生成两个文件，id_rsa和id_rsa.pub，前者是私钥，后者是公钥，公钥文件中的内容粘贴到gitee或者github上相应的位置就可以了。  </p>
+<h1 id="SSH公钥配置"><a href="#SSH公钥配置" class="headerlink" title="SSH公钥配置"></a>SSH公钥配置</h1><p>在桌面上右键点击，选择 <strong>Git Bash Here</strong> ，在命令行中输入以下命令，生成秘钥， (-t rsa表示使用rsa这种加密算法)</p>
+<pre><code>ssh-keygen -t rsa -C &quot;邮箱地址&quot;
+</code></pre>
+<p>之后输入三次回车，输入下面的命令切换目录</p>
+<pre><code>cd ~/.ssh
+</code></pre>
+<p>这条命令要在C:\Users\Administrator\.ssh文件下执行，输入下面的命令查看是否有 id_rsa 和 id_rsa.pub 这两个文件夹</p>
+<pre><code>ls
+</code></pre>
+<p>其中 ，id_rsa 是私钥，自己保存的，不能透露给其他人， id_rsa.pub 是公钥，将里面的内容复制到 Github 或者 Gitee 上的相应位置就配置成功了，现在，我们输入下面的命令查看公钥的内容</p>
+<pre><code>cat id_rsa.pub
+</code></pre>
+<p>将这条命令下面显示出来的内容全部复制</p>
+<p>登录 Github ，在右上角用户头像那里的下拉菜单中选择 <strong>Settings</strong></p>
+<p><img src="/2022/07/04/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/202207042044191.png" alt="001"></p>
+<p>点击 <strong>New SSH key</strong></p>
+<p><img src="/2022/07/04/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/202207042044470.png" alt="002"></p>
+<p>上面的 <strong>Title</strong> 那里的内容是公钥的标题，随便写都可以，要是你想以后好辨认一点的话，也可以起个比较好的名字，下面的 <strong>Key</strong> 那里就将我们刚刚复制的内容粘贴上去就可以了，然后点击左下角的绿色按钮 <strong>Add SSH key</strong></p>
+<p><img src="/2022/07/04/Git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/202207042045913.png" alt="003"></p>
 <h1 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h1><p>在初始化的项目文件下（或clone下来的文件夹下）直接创建相应的文件即可。</p>
 <h1 id="忽略文件编写"><a href="#忽略文件编写" class="headerlink" title="忽略文件编写"></a>忽略文件编写</h1><p>将工程上传Github上时可以选择性的上传一些文件，一些中间生成的文件我们可以不必上传，将其忽略，配置.gitignore文件即可实现上传时的自动过滤。<br>文件的书写可以参考上面文件操作中的内容，当然Github官网已经为我们写好了一些.gitignore文件的配置，直接粘贴复制就可以了（老cv工程师了）。<br>网址：<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a>  </p>
 <hr>
