@@ -229,6 +229,10 @@
     
         
             
+        
+    
+        
+            
                 <li>
                     <div data-rel="数据结构与算法">
                         
@@ -312,11 +316,28 @@
             
                 <li>
                     <div data-rel="Javase">
+                        <i class="fold iconfont icon-right"></i>
                         
                         Javase
                         <small>(8)</small>
                         
                     </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="Javase<--->多线程">
+                                        
+                                        多线程
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
                     
                 </li>
             
@@ -619,7 +640,7 @@
         </a>
         
         
-        <a  class="All Javase "
+        <a  class="All Javase 多线程 "
            href="/2023/03/16/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
            data-tag=""
            data-author="" >
@@ -1088,7 +1109,7 @@
         
         
         <a  class="All Javase "
-           href="/2021/11/11/Java%E6%95%B0%E7%BB%84-java%E6%95%B0%E7%BB%84/"
+           href="/2021/11/11/Java%E6%95%B0%E7%BB%84/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Java数组">Java数组</span>
@@ -1134,7 +1155,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Javase">Javase</a>
+            <a  data-rel="Javase">Javase</a> > 
+            
+            <a  data-rel="Javase&lt;---&gt;多线程">多线程</a>
             
         </span>
         
@@ -1142,7 +1165,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-03-16 19:14:28'>2023-03-16 19:14</time>
+            Created At : <time class="date" title='Updated At: 2024-01-19 23:04:28'>2023-03-16 19:14</time>
         
     </div>
     <div class="article-meta">
@@ -1164,7 +1187,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-text">多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">创建线程的方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%BB%BA%E8%AE%AE"><span class="toc-text">使用多线程的建议</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">线程的生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">线程的一些常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%81%9C%E6%AD%A2"><span class="toc-text">线程停止</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E4%BC%91%E7%9C%A0"><span class="toc-text">线程休眠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%A4%BC%E8%AE%A9"><span class="toc-text">线程礼让</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%8F%92%E9%98%9F"><span class="toc-text">线程插队</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E6%A3%80%E6%B5%8B"><span class="toc-text">线程状态检测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">线程优先级</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%88%E6%8A%A4%E7%BA%BF%E7%A8%8B"><span class="toc-text">守护线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="toc-text">线程同步机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#synchronized"><span class="toc-text">synchronized</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-text">多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">创建线程的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0Runnable%E6%8E%A5%E5%8F%A3-%EF%BC%88-%EF%BC%89"><span class="toc-text">实现Runnable接口 （*）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%A7%E6%89%BFThread%E7%B1%BB%E6%9C%AC%E8%BA%AB-%EF%BC%88-%EF%BC%89"><span class="toc-text">继承Thread类本身 （*）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Callable%E5%92%8CFuture%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B"><span class="toc-text">通过Callable和Future创建线程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%BB%BA%E8%AE%AE"><span class="toc-text">使用多线程的建议</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">线程的生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">线程的一些常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%81%9C%E6%AD%A2"><span class="toc-text">线程停止</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E4%BC%91%E7%9C%A0"><span class="toc-text">线程休眠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%A4%BC%E8%AE%A9"><span class="toc-text">线程礼让</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%8F%92%E9%98%9F"><span class="toc-text">线程插队</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E6%A3%80%E6%B5%8B"><span class="toc-text">线程状态检测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">线程优先级</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%88%E6%8A%A4%E7%BA%BF%E7%A8%8B"><span class="toc-text">守护线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="toc-text">线程同步机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#synchronized"><span class="toc-text">synchronized</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1180,105 +1203,94 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><p>一个程序对应于一个进程，一个进程可以对应多个线程。一个线程程指的是进程中一个单一顺序的控制流，可以把线程当做是一个程序里面需要处理的各种分立的任务，像是一个 Java 程序的执行就对应着一个进程，但是它在运行的时候至少包含两个线程，一个是 main 线程，一个是 gc 线程。</p>
-<blockquote>
-<p>进程：一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束。</p>
-</blockquote>
-<h1 id="创建线程的方法"><a href="#创建线程的方法" class="headerlink" title="创建线程的方法"></a>创建线程的方法</h1><ul>
-<li><p>实现Runnable接口 （*）</p>
-<pre><code class="java">  package com.shuyepl.demo;
-  
-  public class demo &#123;
-      public static void main(String[] args) &#123;
-          Thread t2 = new Thread(new MyThread());
-          t2.start();
-  
-          for (int i = 0; i &lt; 10; i++) &#123;
-              System.out.println(&quot;main ==&gt; &quot; + i);
-          &#125;
-      &#125;
-  &#125;
-  
-  class MyThread implements Runnable &#123;
-      public void run()&#123;
-          for (int i = 0; i &lt; 10; i++) &#123;
-              System.out.println(&quot;MyThread ==&gt; &quot; + i);
-          &#125;
-      &#125;
-  &#125;
+        <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><p>一个程序对应于一个进程，一个进程可以对应多个线程。一个线程指的是进程中一个单一顺序的控制流，可以把线程当做是一个程序里面需要处理的各种分立任务，像是一个 Java 程序的执行就对应着一个进程，但是它在运行的时候至少包含两个线程，一个是 main 线程，一个是 gc 线程。一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束。</p>
+<h1 id="创建线程的方法"><a href="#创建线程的方法" class="headerlink" title="创建线程的方法"></a>创建线程的方法</h1><h2 id="实现Runnable接口-（-）"><a href="#实现Runnable接口-（-）" class="headerlink" title="实现Runnable接口 （*）"></a>实现Runnable接口 （*）</h2><pre><code class="java">package com.shuyepl.demo;
+
+public class demo &#123;
+    public static void main(String[] args) &#123;
+        Thread t2 = new Thread(new MyThread());
+        t2.start();
+
+        for (int i = 0; i &lt; 10; i++) &#123;
+            System.out.println(&quot;main ==&gt; &quot; + i);
+        &#125;
+    &#125;
+&#125;
+
+class MyThread implements Runnable &#123;
+    public void run()&#123;
+        for (int i = 0; i &lt; 10; i++) &#123;
+            System.out.println(&quot;MyThread ==&gt; &quot; + i);
+        &#125;
+    &#125;
+&#125;
 </code></pre>
-<p>  运行结果：</p>
-<pre><code>  main ==&gt; 0
-  main ==&gt; 1
-  main ==&gt; 2
-  main ==&gt; 3
-  main ==&gt; 4
-  main ==&gt; 5
-  MyThread ==&gt; 0
-  main ==&gt; 6
-  main ==&gt; 7
-  main ==&gt; 8
-  main ==&gt; 9
-  MyThread ==&gt; 1
-  MyThread ==&gt; 2
-  MyThread ==&gt; 3
-  MyThread ==&gt; 4
-  MyThread ==&gt; 5
-  MyThread ==&gt; 6
-  MyThread ==&gt; 7
-  MyThread ==&gt; 8
-  MyThread ==&gt; 9
+<p>运行结果：</p>
+<pre><code>main ==&gt; 0
+main ==&gt; 1
+main ==&gt; 2
+main ==&gt; 3
+main ==&gt; 4
+main ==&gt; 5
+MyThread ==&gt; 0
+main ==&gt; 6
+main ==&gt; 7
+main ==&gt; 8
+main ==&gt; 9
+MyThread ==&gt; 1
+MyThread ==&gt; 2
+MyThread ==&gt; 3
+MyThread ==&gt; 4
+MyThread ==&gt; 5
+MyThread ==&gt; 6
+MyThread ==&gt; 7
+MyThread ==&gt; 8
+MyThread ==&gt; 9
 </code></pre>
-</li>
-<li><p>继承Thread类本身 （*）</p>
-<pre><code class="java">  package com.shuyepl.demo;
-  
-  public class demo &#123;
-      public static void main(String[] args) &#123;
-          MyThread t1 = new MyThread();
-          t1.start();
-  
-          for (int i = 0; i &lt; 10; i++) &#123;
-              System.out.println(&quot;main ==&gt; &quot; + i);
-          &#125;
-      &#125;
-  &#125;
-  
-  class MyThread extends Thread &#123;
-      public void run()&#123;
-          for (int i = 0; i &lt; 10; i++) &#123;
-              System.out.println(&quot;MyThread ==&gt; &quot; + i);
-          &#125;
-      &#125;
-  &#125;
+<h2 id="继承Thread类本身-（-）"><a href="#继承Thread类本身-（-）" class="headerlink" title="继承Thread类本身 （*）"></a>继承Thread类本身 （*）</h2><pre><code class="java">package com.shuyepl.demo;
+
+public class demo &#123;
+    public static void main(String[] args) &#123;
+        MyThread t1 = new MyThread();
+        t1.start();
+
+        for (int i = 0; i &lt; 10; i++) &#123;
+            System.out.println(&quot;main ==&gt; &quot; + i);
+        &#125;
+    &#125;
+&#125;
+
+class MyThread extends Thread &#123;
+    public void run()&#123;
+        for (int i = 0; i &lt; 10; i++) &#123;
+            System.out.println(&quot;MyThread ==&gt; &quot; + i);
+        &#125;
+    &#125;
+&#125;
 </code></pre>
-<p>  运行结果：</p>
-<pre><code>  main ==&gt; 0
-  MyThread ==&gt; 0
-  MyThread ==&gt; 1
-  MyThread ==&gt; 2
-  MyThread ==&gt; 3
-  MyThread ==&gt; 4
-  MyThread ==&gt; 5
-  MyThread ==&gt; 6
-  MyThread ==&gt; 7
-  MyThread ==&gt; 8
-  main ==&gt; 1
-  main ==&gt; 2
-  MyThread ==&gt; 9
-  main ==&gt; 3
-  main ==&gt; 4
-  main ==&gt; 5
-  main ==&gt; 6
-  main ==&gt; 7
-  main ==&gt; 8
-  main ==&gt; 9
+<p>运行结果：</p>
+<pre><code>main ==&gt; 0
+MyThread ==&gt; 0
+MyThread ==&gt; 1
+MyThread ==&gt; 2
+MyThread ==&gt; 3
+MyThread ==&gt; 4
+MyThread ==&gt; 5
+MyThread ==&gt; 6
+MyThread ==&gt; 7
+MyThread ==&gt; 8
+main ==&gt; 1
+main ==&gt; 2
+MyThread ==&gt; 9
+main ==&gt; 3
+main ==&gt; 4
+main ==&gt; 5
+main ==&gt; 6
+main ==&gt; 7
+main ==&gt; 8
+main ==&gt; 9
 </code></pre>
-</li>
-<li><p>通过Callable和Future创建线程</p>
-</li>
-</ul>
-<h1 id="使用多线程的建议"><a href="#使用多线程的建议" class="headerlink" title="使用多线程的建议"></a>使用多线程的建议</h1><p>通过上面的例子可以看出来，使用继承 Thread 类来创建多线程的方式和使用实现 Runnable 接口来实现多线程的方式差不多，区别在于前者可以直接使用对象的 run 方法来进行多线程，而后者则需要将对象传入一个 Thread 对象中，再去调用 Thread 对象的 run 方法。</p>
+<h2 id="通过Callable和Future创建线程"><a href="#通过Callable和Future创建线程" class="headerlink" title="通过Callable和Future创建线程"></a>通过Callable和Future创建线程</h2><h1 id="使用多线程的建议"><a href="#使用多线程的建议" class="headerlink" title="使用多线程的建议"></a>使用多线程的建议</h1><p>通过上面的例子可以看出来，使用继承 Thread 类来创建多线程的方式和使用实现 Runnable 接口来实现多线程的方式差不多，区别在于前者可以直接使用对象的 run 方法来进行多线程，而后者则需要将对象传入一个 Thread 对象中，再去调用 Thread 对象的 run 方法。</p>
 <p>在使用的时候，考虑到 Java 里面只支持单继承，所以，采用实现 Runnable 接口的方式实现多线程是一个比较好的方式。</p>
 <p>同时，使用 Runnable 实现多线程还有一个好处是，可以将同一个实现了 Runnable 接口的类对象丢进多个 Thread 对象中，实现多个线程。</p>
 <p>下面是一个简单的例子，缺点是没有加上相应的线程控制，所以会出现一些不合预期的情况，比如从结果中可以看到，t3 和 t2 共同抢到了 1 号 gift ，而我们想的是每个 gift 只能给一个人，这样，就出现问题了。</p>
@@ -1584,9 +1596,9 @@ public class DaemonTest implements Runnable &#123;
     &#125;
 &#125;
 </code></pre>
-<h1 id="线程同步机制"><a href="#线程同步机制" class="headerlink" title="线程同步机制"></a>线程同步机制</h1><p>多个线程同时操作同一个对象的时候，可能会发生错误，例如：我和我的朋友分享了我的银行卡账号和密码，卡里有100块钱，如果我们同时一个在手机操作取钱，一个在 ATM 机操作取钱，加入我们的这两个取钱的线程同步启动，并且所有执行的代码都同步运行（很理想），那我们看到的银行卡的余额就都是100块对吧，如果这个时候我在 ATM 取100块，我的朋友在手机上取一百块，那因为我们从数据库中查看到的数据都是有100块钱余额，那就都取成功了，余额变成0了，结果是卡里的100块变成200块了，这个很魔幻对不对，算是一个很致命的错误了，银行不可能让人这样子取钱的，不然早破产了，那这里面就涉及到线程控制了。</p>
-<p>线程控制简单点说就是大家执行到修改数据库中数据的时候需要排队，一个一个来，不能一起来。用上面那个银行的例子来说的话就是，当我们两个人取钱的请求到达服务器之后，必须排队去操作我卡里的余额，只有前面一个人的业务完成之后，修改完数据库中的余额了，后面的人才能进入数据库中去操作，所以，因为我已经先取完100块钱了，数据库中的余额变为0了，所以，我的朋友进来想取100块钱的话，就余额不足了，取款失败。</p>
-<h2 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h2><p>我们控制线程的方式是使用 synchronized 关键字给线程加锁，在使用的过程中，为了程序的运行速度等考虑，建议只给操作数据的部分加上锁，而不用把查数据的代码也一起加锁，这样会拖慢整个程序的运行速度。</p>
+<h1 id="线程同步机制"><a href="#线程同步机制" class="headerlink" title="线程同步机制"></a>线程同步机制</h1><p>多个线程同时操作同一个对象的时候，可能会发生错误，例如：我和我的朋友分享了我的银行卡账号和密码，卡里有100块钱，如果我们同时一个在手机操作取钱，一个在 ATM 机操作取钱，假如我们这两个取钱的线程同步启动，并且所有执行的代码都同步运行（很理想），那我们看到的银行卡的余额就都是100块对吧，如果这个时候我在 ATM 取100块，我的朋友在手机上取一百块，那因为我们从数据库中查看到的数据都是有100块钱余额，那就都取成功了，余额变成0了，结果是卡里的100块变成200块了，这个很魔幻对不对，算是一个很致命的错误了，银行不可能让人这样子取钱的，不然早破产了，那这里面就涉及到线程控制了。</p>
+<p>线程控制简单点说就是大家修改数据库数据的时候需要排队，一个一个来，不能一起来。用上面的例子来说就是，当我们两个人取钱的请求到达服务器之后，必须排队去操作我卡里的余额，只有前面一个人的业务完成之后，修改完数据库中的余额后，后面的人才能进入数据库中去操作，所以，因为我已经先取完100块钱了，数据库中的余额变为0了，我的朋友进来想取100块钱的话，就余额不足了，取款失败。</p>
+<h2 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h2><p>控制线程的方式可以是使用 synchronized 关键字给代码块加锁。</p>
 <hr>
 <p>文章引用资料来自：</p>
 <ul>
