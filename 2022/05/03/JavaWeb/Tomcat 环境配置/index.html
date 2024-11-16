@@ -20,15 +20,17 @@
 
 	<!-- favicon -->
 	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
 
 
 	<!-- search -->
 	<script>
-		var searchEngine = "";
+		var searchEngine = "https://www.google.com/search?q=";
 		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
 			searchEngine = "https://www.google.com/search?q=";
 		}
-		var homeHost = "";
+		var homeHost = "https://shuyepl.github.io";
 		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
 			homeHost = window.location.host;
 		}
@@ -65,6 +67,13 @@
 
 
 	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
 	
 
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -77,11 +86,40 @@
     
 
     
-
+      <li class="menu-item">
+        <a href="/tags" class="menu-item-link">Tags</a>
+      </li>
     
 
+    
+      <li class="menu-item">
+        <a href="/categories" class="menu-item-link">Categories</a>
+      </li>
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href='https://github.com/wujun234/hexo-theme-tree' class="menu-item-link" target="_blank">
+            Tree
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a href='https://shuyepl.github.io/static-utils' class="menu-item-link" target="_blank">
+            Utils
+          </a>
+        </li>
+      
     
   
+    
+      <li class="menu-item">
+        <a href='https://github.com/shuyepl' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
     
 	</ul>
 </header>
@@ -129,18 +167,7 @@
 								<li class="file">
 									<a href="/2022/07/12/JavaWeb/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
                      
-										    EL表达式
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-							<ul>
-								<li class="file">
-									<a href="/2022/06/07/JavaWeb/HttpServlet/">
-                     
-										    HttpServlet
+										    EL表达式.md
                      
 									</a>
 								</li>
@@ -160,9 +187,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2022/06/30/JavaWeb/JSP/">
+									<a href="/2022/06/07/JavaWeb/HttpServlet/">
                      
-										    JSP
+										    HttpServlet
                      
 									</a>
 								</li>
@@ -182,9 +209,20 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2022/06/30/JavaWeb/JSP/">
+                     
+										    JSP
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2022/07/12/JavaWeb/JSTL%E6%A0%87%E7%AD%BE%E5%BA%93/">
                      
-										    JSTL标签库
+										    JSTL标签库.md
                      
 									</a>
 								</li>
@@ -250,7 +288,7 @@
 								<li class="file">
 									<a href="/2022/07/10/JavaWeb/cookie/">
                      
-										    cookie
+										    cookie.md
                      
 									</a>
 								</li>
@@ -270,9 +308,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2022/07/10/JavaWeb/session/">
+									<a href="/2022/07/15/JavaWeb/session%E5%92%8Ccookie%E8%81%94%E5%90%88%E4%BD%BF%E7%94%A8%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
                      
-										    session
+										    session和cookie联合使用时的注意事项
                      
 									</a>
 								</li>
@@ -281,9 +319,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2022/07/15/JavaWeb/session%E5%92%8Ccookie%E8%81%94%E5%90%88%E4%BD%BF%E7%94%A8%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
+									<a href="/2022/07/10/JavaWeb/session/">
                      
-										    session和cookie联合使用时的注意事项
+										    session.md
                      
 									</a>
 								</li>
@@ -503,7 +541,7 @@
 								<li class="file">
 									<a href="/2023/03/25/MyBatis/MyBatis%E4%B8%AD%E4%B8%A4%E7%A7%8D%E5%8D%A0%E4%BD%8D%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/">
                      
-										    MyBatis中两种占位符的区别
+										    MyBatis两种占位符的区别
                      
 									</a>
 								</li>
@@ -1162,7 +1200,7 @@
 	</div>
 	<div id="footer">
 	<p>
-	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+	©<span id="footerYear-start">2020</span>-<span id="footerYear-end"></span>
 
 	
 	    <a href="/">shuyepl</a>
@@ -1178,13 +1216,9 @@
 
 
 <script type="text/javascript">
-	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
-</script>
-
-<script type="text/javascript">
 	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
 </script>
 
 	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
